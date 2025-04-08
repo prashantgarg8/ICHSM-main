@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ICHSM 2026</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #0d47a1;
+            --accent: #2196f3;
+            --light: #e3f2fd;
+            --dark: #0a1929;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pattern.png') repeat;
+            opacity: 0.1;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .logo-container img {
+            height: 80px;
+            width: auto;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 1rem 1.5rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        /* Content Styles */
+        .content-section {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem 0;
+            }
+
+            .logo-container img {
+                height: 60px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Add these styles to the existing style section */
+        .btn-primary-outline {
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            background: transparent;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .quick-links {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .quick-links .btn {
+            margin: 0.5rem;
+            min-width: 200px;
+        }
+
+        /* Enhanced Button Animations */
+        .animated-btn {
+            position: relative;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .animated-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .animated-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .animated-btn:hover::before {
+            opacity: 1;
+        }
+
+        .animated-btn i {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .animated-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Card Hover Effects */
+        .content-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26,35,126,0.05), rgba(33,150,243,0.05));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+
+        .content-card:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Update the main content section */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .objective-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateY(-5px);
+            background: var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .objective-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .objective-item h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Update Quick Links buttons */
+        .quick-links .btn-primary-outline {
+            background: var(--white);
+            color: var(--primary);
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .quick-links .btn-primary-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background: var(--white);
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo Bar -->
+    <div class="logo-bar bg-white">
+        <div class="container">
+            <div class="logo-container">
+                <img src="jiit.png" alt="JIIT Logo" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">ICHSM 2026</h1>
+            <p class="lead mb-0">International Conference on Humanities, Social Sciences and Management</p>
+            <p class="mb-0">February 26–28, 2026 | Hybrid Mode</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="call-for-papers.html">Call for Papers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="speakers.html">Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="schedule.html">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="committee.html">Committee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About the Conference</h2>
+
+        <div class="row">
+                <div class="col-lg-12" data-aos="fade-up">
+                    <div class="content-card">
+                        <h3 class="mb-4">
+                            <i class="fas fa-globe text-primary me-2"></i>
+                            Overview
+                        </h3>
+                        <p class="lead">The ICHSM-2026: Redefining Humanities, Social Sciences, and Management in the Digital Age will serve as a crucial platform for scholars, researchers, industry experts, and policymakers to explore the transformative impact of digital technologies across diverse academic and professional domains.</p>
+                        
+                        <p>In an era where artificial intelligence, big data, blockchain, and automation are reshaping traditional paradigms, this conference aims to foster interdisciplinary discussions on the evolving roles of literature, sociology, economics, psychology, political science, and business management. It will highlight how digital innovations are redefining research methodologies, decision-making processes, governance structures, and business models.</p>
+
+                        <p>For academia, the conference provides an opportunity to engage with cutting-edge research, explore emerging pedagogical approaches, and build collaborations across disciplines. From an industry perspective, the event will offer insights into the changing dynamics of consumer behaviour, financial ecosystems, workplace management, and regulatory landscapes. By bridging the gap between research and practice, this conference aspires to create meaningful solutions that address contemporary challenges and drive sustainable growth in the digital era.</p>
+                        
+                        <div class="mt-4">
+                            <a href="registration.html" class="animated-btn">
+                                <i class="fas fa-user-plus"></i>Join the Conference
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="content-card">
+                        <h3 class="mb-4">
+                            <i class="fas fa-bullseye text-primary me-2"></i>
+                            Conference Objectives
+                        </h3>
+                        <div class="objectives-grid">
+                            <div class="objective-item">
+                                <i class="fas fa-users text-primary mb-3"></i>
+                                <h4>Networking</h4>
+                                <p>Connect with leading researchers and experts in your field</p>
+                            </div>
+                            <div class="objective-item">
+                                <i class="fas fa-lightbulb text-primary mb-3"></i>
+                                <h4>Innovation</h4>
+                                <p>Explore cutting-edge research and emerging technologies</p>
+                            </div>
+                            <div class="objective-item">
+                                <i class="fas fa-handshake text-primary mb-3"></i>
+                                <h4>Collaboration</h4>
+                                <p>Build partnerships and foster interdisciplinary research</p>
+                            </div>
+                            <div class="objective-item">
+                                <i class="fas fa-chart-line text-primary mb-3"></i>
+                                <h4>Growth</h4>
+                                <p>Drive sustainable development and innovation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <div class="quick-links text-center text-white">
+        <div class="container">
+            <h3 class="mb-4">Quick Access</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="registration.html" class="btn btn-primary-outline bg-white">Register Now</a>
+                <a href="call-for-papers.html" class="btn btn-primary-outline bg-white">Submit Paper</a>
+                <a href="schedule.html" class="btn btn-primary-outline bg-white">View Schedule</a>
+                <a href="speakers.html" class="btn btn-primary-outline bg-white">Our Speakers</a>
+                <a href="venue.html" class="btn btn-primary-outline bg-white">Venue Info</a>
+                <a href="contact.html" class="btn btn-primary-outline bg-white">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start">
+                    <h5>Contact Us</h5>
+                    <p>Email: ichsm2026@jiit.ac.in</p>
+                    <p>Phone: +91-120-2594000</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="registration.html" class="text-white">Registration</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">&copy; 2026 ICHSM - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
