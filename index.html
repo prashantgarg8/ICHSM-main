@@ -525,7 +525,7 @@
                 </div>
             </div>
             <div class="conference-title">
-                <h1>International Conference on Humanities, Social Sciences and Management (ICHSSM 2026)</h1>
+                <h1>International Conference on Humanities, Social Sciences and Management (ICHSM 2026)</h1>
         
             </div>
         </div>
@@ -602,7 +602,7 @@
             <h2 class="text-center mb-4" style="color: #fff; font-size: 2.5rem; font-weight: 500;">Welcome to</h2>
             <h1 class="hero-title" style="font-size: 3.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 1rem;">
                 International Conference on Humanities, Social Sciences and Management<br>
-                <span style="font-size: 2.8rem; display: block; margin-top: 1rem;">(ICHSSM 2026)</span>
+                <span style="font-size: 2.8rem; display: block; margin-top: 1rem;">(ICHSM 2026)</span>
             </h1>
             <div class="hero-subtitle" style="font-size: 1.8rem; margin: 2rem 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
                 Redefining Humanities, Social Sciences, and Management in the Digital Age
@@ -839,7 +839,7 @@
                 <h2 class="display-5 fw-bold text-primary">Explore Nearby Attractions</h2>
                 <p class="text-muted">Discover the cultural and historical landmarks around JIIT, Noida</p>
             </div>
-            <div id="attractionsSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+            <div id="attractionsSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="1"></button>
@@ -850,7 +850,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="attraction-card">
-                            <img src="images/attractions/akshardham.jpg" alt="Akshardham Temple" onerror="this.src='https://placehold.co/1200x600/ff9800/ffffff?text=Akshardham+Temple'">
+                            <img src="images/attractions/akshardham.jpg" alt="Akshardham Temple" onerror="this.src='https://placehold.co/1920x1080/ff9800/ffffff?text=Akshardham+Temple'">
                             <div class="attraction-info">
                                 <h3>Akshardham Temple</h3>
                                 <p>A magnificent Hindu temple and spiritual-cultural campus displaying millennia of traditional and modern Hindu culture, spirituality, and architecture.</p>
@@ -860,7 +860,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="attraction-card">
-                            <img src="images/attractions/war-memorial.jpg" alt="National War Memorial" onerror="this.src='https://placehold.co/1200x600/4caf50/ffffff?text=National+War+Memorial'">
+                            <img src="images/attractions/war-memorial.jpg" alt="National War Memorial" onerror="this.src='https://placehold.co/1920x1080/4caf50/ffffff?text=National+War+Memorial'">
                             <div class="attraction-info">
                                 <h3>National War Memorial</h3>
                                 <p>A national monument established in 2019 to honor our brave soldiers, the Rashtriya Samar Smarak stands as a symbol of gratitude and remembrance.</p>
@@ -870,7 +870,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="attraction-card">
-                            <img src="images/attractions/cp.jpg" alt="Connaught Place" onerror="this.src='https://placehold.co/1200x600/3f51b5/ffffff?text=Connaught+Place'">
+                            <img src="images/attractions/cp.jpg" alt="Connaught Place" onerror="this.src='https://placehold.co/1920x1080/3f51b5/ffffff?text=Connaught+Place'">
                             <div class="attraction-info">
                                 <h3>Connaught Place</h3>
                                 <p>A vibrant business hub with Georgian-style architecture, featuring global stores, vintage cinemas, restaurants, and the famous Janpath Market for traditional shopping.</p>
@@ -880,7 +880,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="attraction-card">
-                            <img src="images/attractions/lotus.jpg" alt="Lotus Temple" onerror="this.src='https://placehold.co/1200x600/e91e63/ffffff?text=Lotus+Temple'">
+                            <img src="images/attractions/lotus.jpg" alt="Lotus Temple" onerror="this.src='https://placehold.co/1920x1080/e91e63/ffffff?text=Lotus+Temple'">
                             <div class="attraction-info">
                                 <h3>Lotus Temple</h3>
                                 <p>A remarkable Baháʼí House of Worship dedicated in 1986, famous for its stunning lotus-like architecture and serene surroundings.</p>
@@ -890,7 +890,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="attraction-card">
-                            <img src="images/attractions/red-fort.jpg" alt="Red Fort" onerror="this.src='https://placehold.co/1200x600/009688/ffffff?text=Red+Fort'">
+                            <img src="images/attractions/red-fort.jpg" alt="Red Fort" onerror="this.src='https://placehold.co/1920x1080/009688/ffffff?text=Red+Fort'">
                             <div class="attraction-info">
                                 <h3>Red Fort (Lal Qila)</h3>
                                 <p>A historic fort in Old Delhi showcasing magnificent Mughal architecture and rich Indian heritage.</p>
@@ -944,8 +944,23 @@
             }
             .attraction-card {
                 position: relative;
-                height: 500px;
+                height: 600px;
                 overflow: hidden;
+            }
+            .attraction-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                filter: brightness(1.1) contrast(1.1);
+                -webkit-filter: brightness(1.1) contrast(1.1);
+            }
+            .attraction-card:hover img {
+                transform: scale(1.05);
+                filter: brightness(1.2) contrast(1.2);
+                -webkit-filter: brightness(1.2) contrast(1.2);
             }
             .attraction-card:before {
                 content: '';
@@ -954,17 +969,8 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.8));
+                background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.85));
                 z-index: 1;
-            }
-            .attraction-card img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.5s ease;
-            }
-            .attraction-card:hover img {
-                transform: scale(1.05);
             }
             .attraction-info {
                 position: absolute;
@@ -978,38 +984,38 @@
                 transition: transform 0.3s ease;
             }
             .attraction-info h3 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
                 margin-bottom: 15px;
-                font-weight: 600;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                font-weight: 700;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             }
             .attraction-info p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 margin-bottom: 20px;
                 opacity: 0.95;
                 line-height: 1.6;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             }
             .distance {
                 display: inline-flex;
                 align-items: center;
-                padding: 10px 20px;
-                background: rgba(255,255,255,0.15);
-                backdrop-filter: blur(5px);
+                padding: 12px 25px;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
                 border-radius: 30px;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 font-weight: 500;
                 border: 1px solid rgba(255,255,255,0.2);
             }
             .distance i {
                 margin-right: 8px;
                 color: var(--accent);
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             #attractionsSlider .carousel-control-prev,
             #attractionsSlider .carousel-control-next {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
                 background: rgba(255,255,255,0.9);
                 border-radius: 50%;
                 top: 50%;
@@ -1030,6 +1036,8 @@
             #attractionsSlider .carousel-control-prev-icon,
             #attractionsSlider .carousel-control-next-icon {
                 filter: invert(1) grayscale(100);
+                width: 30px;
+                height: 30px;
             }
             #attractionsSlider .carousel-indicators {
                 bottom: 20px;
@@ -1037,7 +1045,7 @@
                 z-index: 3;
             }
             #attractionsSlider .carousel-indicators button {
-                width: 30px;
+                width: 40px;
                 height: 4px;
                 background-color: rgba(255,255,255,0.7);
                 border: none;
@@ -1047,21 +1055,21 @@
             }
             #attractionsSlider .carousel-indicators button.active {
                 background-color: var(--accent);
-                width: 40px;
+                width: 50px;
             }
             @media (max-width: 768px) {
                 .attraction-card {
-                    height: 400px;
+                    height: 500px;
                 }
                 .attraction-info h3 {
-                    font-size: 1.8rem;
+                    font-size: 2rem;
                 }
                 .attraction-info p {
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                 }
                 .distance {
-                    padding: 8px 15px;
-                    font-size: 0.9rem;
+                    padding: 10px 20px;
+                    font-size: 1rem;
                 }
                 #attractionsSlider .carousel-control-prev,
                 #attractionsSlider .carousel-control-next {
@@ -1163,7 +1171,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p>Email: ichssm2026@jiit.ac.in</p>
+                    <p>Email: ICHSM2026@jiit.ac.in</p>
                     <p>Phone: +91-120-2594000</p>
                 </div>
                 <div class="footer-section">
@@ -1184,7 +1192,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <p>&copy; 2026 ICHSSM - All Rights Reserved</p>
+                <p>&copy; 2026 ICHSM - All Rights Reserved</p>
                 <p class="developer-credit">Designed and Developed by Prashant Garg</p>
             </div>
         </div>
