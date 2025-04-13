@@ -281,7 +281,7 @@
 
         .weather-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -300,13 +300,13 @@
         }
 
         .weather-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
+            width: 60px;
+            height: 60px;
             margin-bottom: 1rem;
         }
 
         .weather-temp {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -314,6 +314,7 @@
         .weather-desc {
             color: var(--dark);
             margin: 0.5rem 0;
+            font-size: 0.9rem;
         }
 
         .weather-date {
@@ -573,7 +574,7 @@
 
         async function fetchWeatherData() {
             try {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME},${COUNTRY_CODE}&appid=${WEATHER_API_KEY}&units=metric`, {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${CITY_NAME},${COUNTRY_CODE}&appid=${WEATHER_API_KEY}&units=metric`, {
                     method: 'GET',
                     headers: {
                         'Accept': 'application/json',
@@ -591,35 +592,60 @@
                 const weatherContainer = document.getElementById('weatherContainer');
                 weatherContainer.innerHTML = '';
                 
-                // Convert temperatures
-                const temp = Math.round(data.main.temp);
-                const feels_like = Math.round(data.main.feels_like);
-                const temp_min = Math.round(data.main.temp_min);
-                const temp_max = Math.round(data.main.temp_max);
-                
-                // Get weather icon from OpenWeatherMap
-                const iconCode = data.weather[0].icon;
-                const description = data.weather[0].description;
-                
-                const weatherCard = `
-                    <div class="weather-card">
-                        <div class="weather-date">${new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</div>
-                        <div class="d-flex justify-content-center align-items-center mb-3">
-                            <img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${description}" class="weather-icon" style="width: 100px; height: 100px;">
+                // Group forecasts by day
+                const dailyForecasts = {};
+                data.list.forEach(forecast => {
+                    const date = new Date(forecast.dt * 1000);
+                    const dayKey = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+                    
+                    if (!dailyForecasts[dayKey]) {
+                        dailyForecasts[dayKey] = {
+                            temps: [],
+                            descriptions: [],
+                            icons: [],
+                            humidity: [],
+                            wind: []
+                        };
+                    }
+                    
+                    dailyForecasts[dayKey].temps.push(forecast.main.temp);
+                    dailyForecasts[dayKey].descriptions.push(forecast.weather[0].description);
+                    dailyForecasts[dayKey].icons.push(forecast.weather[0].icon);
+                    dailyForecasts[dayKey].humidity.push(forecast.main.humidity);
+                    dailyForecasts[dayKey].wind.push(forecast.wind.speed);
+                });
+
+                // Create weather cards for each day
+                Object.entries(dailyForecasts).forEach(([date, forecast]) => {
+                    const avgTemp = Math.round(forecast.temps.reduce((a, b) => a + b, 0) / forecast.temps.length);
+                    const minTemp = Math.round(Math.min(...forecast.temps));
+                    const maxTemp = Math.round(Math.max(...forecast.temps));
+                    const avgHumidity = Math.round(forecast.humidity.reduce((a, b) => a + b, 0) / forecast.humidity.length);
+                    const avgWind = (forecast.wind.reduce((a, b) => a + b, 0) / forecast.wind.length).toFixed(1);
+                    
+                    // Get the most common weather description and icon
+                    const mostCommonDesc = forecast.descriptions[Math.floor(forecast.descriptions.length / 2)];
+                    const mostCommonIcon = forecast.icons[Math.floor(forecast.icons.length / 2)];
+                    
+                    const weatherCard = `
+                        <div class="weather-card">
+                            <div class="weather-date">${date}</div>
+                            <div class="d-flex justify-content-center align-items-center mb-3">
+                                <img src="https://openweathermap.org/img/wn/${mostCommonIcon}@2x.png" alt="${mostCommonDesc}" class="weather-icon">
+                            </div>
+                            <div class="weather-temp">${avgTemp}°C</div>
+                            <div class="weather-desc text-capitalize">${mostCommonDesc}</div>
+                            <div class="weather-details mt-3">
+                                <div class="mb-2"><i class="fas fa-temperature-high me-2"></i>High: ${maxTemp}°C</div>
+                                <div class="mb-2"><i class="fas fa-temperature-low me-2"></i>Low: ${minTemp}°C</div>
+                                <div class="mb-2"><i class="fas fa-tint me-2"></i>Humidity: ${avgHumidity}%</div>
+                                <div class="mb-2"><i class="fas fa-wind me-2"></i>Wind: ${avgWind} m/s</div>
+                            </div>
                         </div>
-                        <div class="weather-temp">${temp}°C</div>
-                        <div class="weather-desc text-capitalize">${description}</div>
-                        <div class="weather-details mt-3">
-                            <div class="mb-2"><i class="fas fa-temperature-high me-2"></i>Feels like: ${feels_like}°C</div>
-                            <div class="mb-2"><i class="fas fa-temperature-low me-2"></i>Min/Max: ${temp_min}°C / ${temp_max}°C</div>
-                            <div class="mb-2"><i class="fas fa-tint me-2"></i>Humidity: ${data.main.humidity}%</div>
-                            <div class="mb-2"><i class="fas fa-wind me-2"></i>Wind: ${data.wind.speed} m/s</div>
-                            <div class="mb-2"><i class="fas fa-cloud me-2"></i>Clouds: ${data.clouds.all}%</div>
-                        </div>
-                    </div>
-                `;
-                
-                weatherContainer.innerHTML = weatherCard;
+                    `;
+                    
+                    weatherContainer.innerHTML += weatherCard;
+                });
             } catch (error) {
                 console.error('Error fetching weather data:', error);
                 document.getElementById('weatherContainer').innerHTML = `
