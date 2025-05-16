@@ -13,7 +13,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="jiit.png" type="image/png">
     <style>
         :root {
             --primary: #1a237e;
@@ -513,6 +513,19 @@
             object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
         }
+
+        .patron-img {
+            width: 220px !important;
+            height: 220px !important;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border: 4px solid var(--primary, #1a237e);
+            padding: 8px;
+            background: #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-radius: 16px;
+        }
     </style>
 </head>
 <body>
@@ -830,6 +843,51 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Chief Patrons & Patrons Section -->
+    <section class="patrons-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-4" style="color: #2ac0e1; font-weight: 600;">CHIEF PATRONS</h2>
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-3 text-center mb-4">
+            <img src="images/chief1.png" alt="Shri Jaiprakash Gaur Ji" class="img-fluid rounded mb-2 patron-img">
+            <div style="font-weight:600;">Shri Jaiprakash Gaur Ji</div>
+            <div style="font-size:0.95em;">Founder Chancellor, JIIT</div>
+          </div>
+          <div class="col-md-3 text-center mb-4">
+            <img src="images/chief2.jpg" alt="Shri Manoj Gaur Ji" class="img-fluid rounded mb-2 patron-img">
+            <div style="font-weight:600;">Shri Manoj Gaur Ji</div>
+            <div style="font-size:0.95em;">Executive Chairman, Jaypee Group</div>
+          </div>
+        </div>
+        <h2 class="text-center mb-4" style="color: #2ac0e1; font-weight: 600;">PATRONS</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-3 text-center mb-4">
+            <img src="images/patron1.jpg" alt="Prof. S.C. Saxena" class="img-fluid rounded mb-2 patron-img">
+            <div style="font-weight:600;">Prof. S.C. Saxena</div>
+            <div style="font-size:0.95em;">Vice Chancellor, JIIT</div>
+          </div>
+          <div class="col-md-3 text-center mb-4">
+            <img src="images/patron2.jpg" alt="Prof. Bodh Raj Mehta" class="img-fluid rounded mb-2 patron-img">
+            <div style="font-weight:600;">Prof. Bodh Raj Mehta</div>
+            <div style="font-size:0.95em;">Vice Chancellor, JIIT</div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .patrons-section img {
+          border: 2px solid #a93226;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+          background: #fff;
+        }
+        @media (max-width: 768px) {
+          .patrons-section .col-md-3 {
+            flex: 0 0 80%;
+            max-width: 80%;
+          }
+        }
+      </style>
     </section>
 
     <!-- Nearby Attractions Slider -->
