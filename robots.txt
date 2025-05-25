@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Sitemap: https://ichsmconf-jiit.net/sitemap.xml
+
+# Disallow admin and private directories if they exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /*.pdf$
+Disallow: /*.docx$
+Disallow: /*.xlsx$ 
