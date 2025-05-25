@@ -356,6 +356,49 @@
         .animated-btn:hover::before {
             opacity: 1;
         }
+
+        /* Add these styles to the existing style section */
+        .google-form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .google-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(26, 35, 126, 0.05));
+            border-radius: 20px;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .google-form-container:hover::before {
+            opacity: 0.8;
+        }
+
+        .form-decoration::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2));
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
     </style>
 </head>
 
@@ -422,30 +465,50 @@
             
                 <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="contact-form">
+                    <div class="contact-form" data-aos="fade-right">
                         <h3 class="mb-4">Get in Touch</h3>
-                        <form action="mailto:icshmhssjiit@gmail.com" method="post" enctype="text/plain">
-                            <div class="form-group mb-3">
-                                <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label">Subject</label>
-                                <input type="text" class="form-control" name="subject" placeholder="Message Subject" required>
-                            </div>
-                            <div class="form-group mb-4">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="animated-btn w-100">
-                                <i class="fas fa-paper-plane me-2"></i>Send Message
-                            </button>
-                        </form>
-                        <p class="mt-3 text-muted small">Your message will be sent to: icshmhssjiit@gmail.com</p>
+                        <div class="google-form-container" style="
+                            width: 100%; 
+                            height: 821px; 
+                            overflow: hidden; 
+                            border-radius: 20px; 
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                            background: var(--white);
+                            position: relative;
+                            transition: all 0.4s ease;
+                            border: 1px solid rgba(33, 150, 243, 0.1);
+                            padding: 1rem;
+                        ">
+                            <div class="form-decoration" style="
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 5px;
+                                background: linear-gradient(90deg, var(--primary), var(--accent));
+                                border-radius: 5px 5px 0 0;
+                            "></div>
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfoKZAMxecxH3Ynli4RqnplXqKVwXYNVNn9xDMBcgHkLgdHAg/viewform?embedded=true" 
+                                    width="100%" 
+                                    height="100%" 
+                                    frameborder="0" 
+                                    marginheight="0" 
+                                    marginwidth="0"
+                                    style="
+                                        border: none;
+                                        border-radius: 15px;
+                                        transition: all 0.3s ease;
+                                    ">
+                                Loading…
+                            </iframe>
+                        </div>
+                        <div class="form-footer mt-3 text-center" style="
+                            color: var(--primary);
+                            font-size: 0.9rem;
+                            opacity: 0.8;
+                        ">
+                            <i class="fas fa-shield-alt me-2"></i>Your information is secure and encrypted
+                        </div>
                     </div>
                 </div>
                 
