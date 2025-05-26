@@ -799,7 +799,7 @@
         </style>
     </section>
 
-    <!-- Info Section -->
+    <!-- Info Section
     <section class="info-section">
         <div class="container">
             <div class="row g-4">
@@ -865,7 +865,167 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+      <!-- START: Important Dates and Countdown Section -->
+<div class="countdown-container">
+    <div class="important-dates">
+      <h2>Important Dates</h2>
+      <ul>
+        <li>Abstract Submission: <span>Sept 30, 2025</span></li>
+        <li>Paper Submission: <span>Oct 31, 2025</span></li>
+        <li>Registration: <span>Oct 31, 2025</span></li>
+        <li>Conference Dates: <span>Feb 26-28, 2026</span></li>
+      </ul>
+    </div>
+  
+    <div class="countdown">
+      <h2>Conference Countdown</h2>
+      <div class="timer-row">
+        <div class="box">
+          <div class="number" id="days">0</div>
+          <div class="label">DAYS</div>
+        </div>
+        <div class="box">
+          <div class="number" id="hours">0</div>
+          <div class="label">HOURS</div>
+        </div>
+        <div class="box">
+          <div class="number" id="minutes">0</div>
+          <div class="label">MINUTES</div>
+        </div>
+        <div class="box">
+          <div class="number" id="seconds">0</div>
+          <div class="label">SECONDS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END -->
+  <!-- START: Countdown + Dates Styles -->
+  <style>
+    .countdown-container {
+      display: flex;
+      flex-wrap: wrap;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      gap: 50px;
+      max-width: 1000px;
+      margin: 40px auto;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  
+    .important-dates {
+      flex: 1;
+    }
+  
+    .important-dates h2 {
+      font-size: 24px;
+      color: #0b0423;
+      margin-bottom: 10px;
+      border-bottom: 3px solid #a104f5;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+  
+    .important-dates ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+  
+    .important-dates li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+  
+    .important-dates li span {
+      color: #8000d8;
+      font-weight: bold;
+    }
+  
+    .countdown {
+      flex: 1;
+      text-align: center;
+    }
+  
+    .countdown h2 {
+      font-size: 24px;
+      color: #0b0423;
+      margin-bottom: 30px;
+    }
+  
+    .timer-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: nowrap;
+    }
+  
+    .box {
+      background: linear-gradient(135deg, #28aee7, #72d0f4);
+      color: white;
+      padding: 20px 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      min-width: 90px;
+    }
+  
+    .box .number {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .box .label {
+      font-size: 12px;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+  
+    @media (max-width: 768px) {
+      .countdown-container {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .timer-row {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+  <!-- END -->
+  <!-- START: Countdown Script -->
+  <script>
+    const targetDate = new Date("Feb 26, 2026 00:00:00").getTime();
+  
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+  
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+  
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+  <!-- END -->
+  
 
     <!-- Chief Patrons & Patrons Section -->
     <section class="patrons-section py-5">
@@ -911,252 +1071,285 @@
         }
       </style>
     </section>
+    <title>Conference Tracks</title>
 
-    <!-- Nearby Attractions Slider -->
-    <section class="attractions-slider-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2 class="display-5 fw-bold text-primary">Explore Nearby Attractions</h2>
-                <p class="text-muted">Discover the cultural and historical landmarks around JIIT, Noida</p>
-            </div>
-            <div id="attractionsSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#attractionsSlider" data-bs-slide-to="4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="attraction-card">
-                            <img src="images/attractions/akshardham.jpg" alt="Akshardham Temple" onerror="this.src='https://placehold.co/1920x1080/ff9800/ffffff?text=Akshardham+Temple'">
-                            <div class="attraction-info">
-                                <h3>Akshardham Temple</h3>
-                                <p>A magnificent Hindu temple and spiritual-cultural campus displaying millennia of traditional and modern Hindu culture, spirituality, and architecture.</p>
-                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 15 km from venue</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="attraction-card">
-                            <img src="images/attractions/war-memorial.jpg" alt="National War Memorial" onerror="this.src='https://placehold.co/1920x1080/4caf50/ffffff?text=National+War+Memorial'">
-                            <div class="attraction-info">
-                                <h3>National War Memorial</h3>
-                                <p>A national monument established in 2019 to honor our brave soldiers, the Rashtriya Samar Smarak stands as a symbol of gratitude and remembrance.</p>
-                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 18 km from venue</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="attraction-card">
-                            <img src="images/attractions/cp.jpg" alt="Connaught Place" onerror="this.src='https://placehold.co/1920x1080/3f51b5/ffffff?text=Connaught+Place'">
-                            <div class="attraction-info">
-                                <h3>Connaught Place</h3>
-                                <p>A vibrant business hub with Georgian-style architecture, featuring global stores, vintage cinemas, restaurants, and the famous Janpath Market for traditional shopping.</p>
-                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 20 km from venue</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="attraction-card">
-                            <img src="images/attractions/lotus.jpg" alt="Lotus Temple" onerror="this.src='https://placehold.co/1920x1080/e91e63/ffffff?text=Lotus+Temple'">
-                            <div class="attraction-info">
-                                <h3>Lotus Temple</h3>
-                                <p>A remarkable Baháʼí House of Worship dedicated in 1986, famous for its stunning lotus-like architecture and serene surroundings.</p>
-                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 16 km from venue</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="attraction-card">
-                            <img src="images/attractions/red-fort.jpg" alt="Red Fort" onerror="this.src='https://placehold.co/1920x1080/009688/ffffff?text=Red+Fort'">
-                            <div class="attraction-info">
-                                <h3>Red Fort (Lal Qila)</h3>
-                                <p>A historic fort in Old Delhi showcasing magnificent Mughal architecture and rich Indian heritage.</p>
-                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 22 km from venue</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#attractionsSlider" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#attractionsSlider" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f9ff;
+        line-height: 1.6;
+      }
+  
+      .tracks-section {
+        padding: 60px 20px;
+        text-align: center;
+        max-width: 1200px;
+        margin: auto;
+      }
+  
+      .tracks-section h2 {
+        font-size: 2.8rem;
+        color: #002244;
+        margin-bottom: 10px;
+      }
+  
+      .tracks-section p.section-subtitle {
+        color: #00bcd4;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+      }
+  
+      .underline {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        margin: 10px auto 40px;
+        border-radius: 4px;
+      }
+  
+      .track-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+  
+      .track-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 114, 255, 0.08);
+        padding: 30px 20px;
+        transition: all 0.3s ease;
+      }
+  
+      .track-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 114, 255, 0.15);
+      }
+  
+      .icon-circle {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 26px;
+      }
+  
+      .track-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #003366;
+        margin-bottom: 12px;
+      }
+  
+      .track-desc {
+        color: #555;
+        font-size: 0.95rem;
+      }
+  
+      .center-card-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+  
+      @media (max-width: 768px) {
+        .tracks-section h2 {
+          font-size: 2rem;
+        }
+  
+        .track-card {
+          padding: 25px 15px;
+        }
+  
+        .track-desc {
+          font-size: 0.9rem;
+        }
+  
+        .center-card-row {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <section class="tracks-section">
+      <p class="section-subtitle">Tracks</p>
+      <h2>Conference Tracks</h2>
+      <div class="underline"></div>
+  
+      <div class="track-cards">
+        <!-- Card 1 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-feather-alt"></i></div>
+          <div class="track-title">Literature and Language</div>
+          <div class="track-desc">Analyzing classical and contemporary literature, linguistic theories, and the evolution of language across cultures.</div>
         </div>
-        <style>
-            .attractions-slider-section {
-                background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
-                padding: 80px 0;
-                position: relative;
-            }
-            .section-header {
-                margin-bottom: 50px;
-                text-align: center;
-            }
-            .section-header h2 {
-                color: var(--primary);
-                margin-bottom: 15px;
-                position: relative;
-                display: inline-block;
-            }
-            .section-header h2:after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80px;
-                height: 3px;
-                background: linear-gradient(90deg, var(--accent), var(--primary));
-                border-radius: 2px;
-            }
-            #attractionsSlider {
-                position: relative;
-                border-radius: 20px;
-                overflow: hidden;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            }
-            .attraction-card {
-                position: relative;
-                height: 600px;
-                overflow: hidden;
-            }
-            .attraction-card img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.5s ease;
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: crisp-edges;
-                filter: brightness(1.1) contrast(1.1);
-                -webkit-filter: brightness(1.1) contrast(1.1);
-            }
-            .attraction-card:hover img {
-                transform: scale(1.05);
-                filter: brightness(1.2) contrast(1.2);
-                -webkit-filter: brightness(1.2) contrast(1.2);
-            }
-            .attraction-card:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.85));
-                z-index: 1;
-            }
-            .attraction-info {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 40px;
-                color: white;
-                z-index: 2;
-                transform: translateY(0);
-                transition: transform 0.3s ease;
-            }
-            .attraction-info h3 {
-                font-size: 2.5rem;
-                margin-bottom: 15px;
-                font-weight: 700;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            }
-            .attraction-info p {
-                font-size: 1.2rem;
-                margin-bottom: 20px;
-                opacity: 0.95;
-                line-height: 1.6;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            }
-            .distance {
-                display: inline-flex;
-                align-items: center;
-                padding: 12px 25px;
-                background: rgba(255,255,255,0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 30px;
-                font-size: 1.1rem;
-                font-weight: 500;
-                border: 1px solid rgba(255,255,255,0.2);
-            }
-            .distance i {
-                margin-right: 8px;
-                color: var(--accent);
-                font-size: 1.2rem;
-            }
-            #attractionsSlider .carousel-control-prev,
-            #attractionsSlider .carousel-control-next {
-                width: 60px;
-                height: 60px;
-                background: rgba(255,255,255,0.9);
-                border-radius: 50%;
-                top: 50%;
-                transform: translateY(-50%);
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-            #attractionsSlider:hover .carousel-control-prev,
-            #attractionsSlider:hover .carousel-control-next {
-                opacity: 1;
-            }
-            #attractionsSlider .carousel-control-prev {
-                left: 20px;
-            }
-            #attractionsSlider .carousel-control-next {
-                right: 20px;
-            }
-            #attractionsSlider .carousel-control-prev-icon,
-            #attractionsSlider .carousel-control-next-icon {
-                filter: invert(1) grayscale(100);
-                width: 30px;
-                height: 30px;
-            }
-            #attractionsSlider .carousel-indicators {
-                bottom: 20px;
-                margin-bottom: 0;
-                z-index: 3;
-            }
-            #attractionsSlider .carousel-indicators button {
-                width: 40px;
-                height: 4px;
-                background-color: rgba(255,255,255,0.7);
-                border: none;
-                margin: 0 4px;
-                border-radius: 2px;
-                transition: all 0.3s ease;
-            }
-            #attractionsSlider .carousel-indicators button.active {
-                background-color: var(--accent);
-                width: 50px;
-            }
-            @media (max-width: 768px) {
-                .attraction-card {
-                    height: 500px;
-                }
-                .attraction-info h3 {
-                    font-size: 2rem;
-                }
-                .attraction-info p {
-                    font-size: 1.1rem;
-                }
-                .distance {
-                    padding: 10px 20px;
-                    font-size: 1rem;
-                }
-                #attractionsSlider .carousel-control-prev,
-                #attractionsSlider .carousel-control-next {
-                    display: none;
-                }
-            }
-        </style>
+  
+        <!-- Card 2 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-broadcast-tower"></i></div>
+          <div class="track-title">Society and Media</div>
+          <div class="track-desc">Understanding the role of media in shaping societal narratives, identities, and public discourse in the digital age.</div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-tractor"></i></div>
+          <div class="track-title">Economy and Rural Development</div>
+          <div class="track-desc">Exploring economic growth, sustainable rural development, and policy frameworks for inclusive progress.</div>
+        </div>
+  
+        <!-- Card 4 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-brain"></i></div>
+          <div class="track-title">Psychology and Human Behavior</div>
+          <div class="track-desc">Studying human cognition, emotions, and social behaviors through psychological theories and practices.</div>
+        </div>
+  
+        <!-- Card 5 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-scale-balanced"></i></div>
+          <div class="track-title">Political Affairs, Governance & Law</div>
+          <div class="track-desc">Debating global and national politics, legal systems, public policy, and governance challenges.</div>
+        </div>
+  
+        <!-- Card 6 -->
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-business-time"></i></div>
+          <div class="track-title">Business Management & Sustainability</div>
+          <div class="track-desc">Innovating sustainable business models and exploring entrepreneurship in a rapidly evolving market landscape.</div>
+        </div>
+      </div>
+  
+      <!-- Centered Row -->
+      <div class="center-card-row">
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-university"></i></div>
+          <div class="track-title">Indian Knowledge System & NEP</div>
+          <div class="track-desc">Exploring India's literary heritage and integrating it with the New Education Policy's vision for a culturally rooted curriculum.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nearby Attractions Section (Modern Card Grid) -->
+    <section class="attractions-section" style="background:#f7f8fa;padding:60px 0;">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="display-5 fw-bold text-primary" style="font-size:2.5rem; font-weight:800; color:#1a237e; margin-bottom:10px;">Explore Nearby Attractions</h2>
+          <div style="width:80px;height:4px;background:linear-gradient(90deg,#00bcd4,#1a237e);margin:0 auto 18px auto;border-radius:2px;"></div>
+          <p class="text-muted" style="font-size:1.15rem;">Discover the cultural and historical landmarks around JIIT, Noida</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6 d-flex align-items-stretch">
+            <div class="attraction-card-modern">
+              <img src="images/attractions/akshardham.jpg" alt="Akshardham Temple" class="attraction-img" onerror="this.src='https://placehold.co/600x350/1a237e/fff?text=Akshardham+Temple'">
+              <div class="attraction-body">
+                <h5 class="attraction-name">Akshardham Temple</h5>
+                <p class="attraction-desc">A magnificent Hindu temple and spiritual-cultural campus displaying millennia of traditional and modern Hindu culture, spirituality, and architecture.</p>
+                <div class="attraction-distance"><i class="fas fa-map-marker-alt"></i> 15 km from venue</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4 col-sm-6 d-flex align-items-stretch">
+            <div class="attraction-card-modern">
+              <img src="images/attractions/war-memorial.jpg" alt="National War Memorial" class="attraction-img" onerror="this.src='https://placehold.co/600x350/2196f3/fff?text=National+War+Memorial'">
+              <div class="attraction-body">
+                <h5 class="attraction-name">National War Memorial</h5>
+                <p class="attraction-desc">A national monument established in 2019 to honor our brave soldiers, the Rashtriya Samar Smarak stands as a symbol of gratitude and remembrance.</p>
+                <div class="attraction-distance"><i class="fas fa-map-marker-alt"></i> 18 km from venue</div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4 col-sm-6 d-flex align-items-stretch">
+            <div class="attraction-card-modern">
+              <img src="images/attractions/lotus.jpg" alt="Lotus Temple" class="attraction-img" onerror="this.src='https://placehold.co/600x350/00bcd4/fff?text=Lotus+Temple'">
+              <div class="attraction-body">
+                <h5 class="attraction-name">Lotus Temple</h5>
+                <p class="attraction-desc">A remarkable Baháʼí House of Worship dedicated in 1986, famous for its stunning lotus-like architecture and serene surroundings.</p>
+                <div class="attraction-distance"><i class="fas fa-map-marker-alt"></i> 16 km from venue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .attraction-card-modern {
+          background: #fff;
+          border-radius: 14px;
+          box-shadow: 0 4px 18px rgba(30,40,90,0.08);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          transition: box-shadow 0.3s, transform 0.3s;
+          height: 100%;
+        }
+        .attraction-card-modern:hover {
+          box-shadow: 0 8px 32px rgba(30,40,90,0.16);
+          transform: translateY(-6px);
+        }
+        .attraction-img {
+          width: 100%;
+          height: 210px;
+          object-fit: cover;
+        }
+        .attraction-body {
+          padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+          flex: 1 1 auto;
+          display: flex;
+          flex-direction: column;
+        }
+        .attraction-name {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #1a237e;
+          margin-bottom: 0.7rem;
+        }
+        .attraction-desc {
+          color: #444;
+          font-size: 1rem;
+          margin-bottom: 1.1rem;
+          flex: 1 1 auto;
+        }
+        .attraction-distance {
+          color: #d32f2f;
+          font-size: 1rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+        .attraction-distance i {
+          color: #d32f2f;
+          margin-right: 4px;
+        }
+        @media (max-width: 991px) {
+          .attraction-img { height: 180px; }
+        }
+        @media (max-width: 767px) {
+          .attractions-section { padding: 40px 0; }
+          .attraction-img { height: 150px; }
+        }
+      </style>
     </section>
 
     <!-- Department Section -->
