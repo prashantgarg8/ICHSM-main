@@ -17,30 +17,41 @@
     <style>
         :root {
             --primary: #1a237e;
-            --secondary: #2196f3;
-            --accent: #00bcd4;
+            --secondary: #0d47a1;
+            --accent: #2196f3;
+            --light: #e3f2fd;
+            --dark: #0a1929;
             --white: #ffffff;
-            --dark: #1a1a1a;
-            --light: #f5f5f5;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
         }
 
-        /* Header */
-        #header {
-            background: var(--white);
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('pattern.png') repeat;
+            opacity: 0.1;
         }
 
         .logo-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 2rem;
+            padding: 1rem 0;
         }
 
         .logo-container img {
@@ -48,49 +59,21 @@
             width: auto;
         }
 
-        #logo {
-            text-align: center;
-        }
-
-        #logo h1 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        #logo span {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        #logo .date {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
         /* Navigation */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-link {
-            font-weight: 500;
             color: var(--dark);
-            padding: 0.8rem 1.2rem;
+            font-weight: 500;
+            padding: 1rem 1.5rem !important;
             transition: all 0.3s ease;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary);
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
         }
 
         /* Venue Card */
@@ -325,64 +308,60 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <!-- Logo Bar -->
+    <div class="logo-bar bg-white">
         <div class="container">
             <div class="logo-container">
                 <img src="jiit.png" alt="JIIT Logo" class="img-fluid">
-                <div id="logo">
-                    <h1>INTERNATIONAL CONFERENCE</h1>
-                    <span>ON HUMANITIES, SOCIAL SCIENCES AND MANAGEMENT</span>
-                    <p class="mt-2">Redefining Humanities, Social Sciences, and Management in the Digital Age</p>
-                    <p class="date">February 26–28, 2026</p>
-                </div>
-                <img src="jiit.png" alt="Conference Logo" class="img-fluid">
             </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">ICHSM 2026</h1>
+            <p class="lead mb-0">International Conference on Humanities, Social Sciences and Management</p>
+            <p class="mb-0">February 26–28, 2026 | Hybrid Mode</p>
         </div>
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="call_for_papers.html">Call for Paper</a>
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="call_for_papers.html">Call for Papers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="registration.html">Registration</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Committee
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="ext.html">External Advisory Committee</a></li>
-                            <li><a class="dropdown-item" href="insti.html">Institutional Advisory Committee</a></li>
-                            <li><a class="dropdown-item" href="int.html">Internal Organizing Committee</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="speakers.html">Speakers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="call_for_papers.html">Submission</a>
+                        <a class="nav-link" href="schedule.html">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="committee.html">Committee</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="venue.html">Venue</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <div class="ms-auto">
-                    <a href="Registration Form.pdf" class="btn btn-primary me-2">Registration Form</a>
-                    <a href="brochure.pdf" class="btn btn-outline-primary me-2">Brochure</a>
-                    <a href="pb.html" class="btn btn-outline-primary">Publications</a>
-                </div>
             </div>
         </div>
     </nav>

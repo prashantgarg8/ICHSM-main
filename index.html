@@ -650,6 +650,104 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
             border-radius: 16px;
         }
+
+        /* About ICHSM Section */
+        .about-ichsm-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #1a237e, #2196f3);
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .about-header h2 {
+            color: #1a237e;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .about-header .underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a237e, #2196f3);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        .about-text {
+            color: #444;
+            line-height: 1.8;
+        }
+        .about-text .lead {
+            color: #1a237e;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .about-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #1a237e, #2196f3);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .about-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+            color: #fff;
+        }
+        .about-btn i {
+            transition: transform 0.3s ease;
+        }
+        .about-btn:hover i {
+            transform: translateX(5px);
+        }
+        @media (max-width: 768px) {
+            .about-ichsm-section {
+                padding: 40px 0;
+            }
+            .about-content {
+                padding: 30px 20px;
+            }
+            .about-header h2 {
+                font-size: 1.8rem;
+            }
+            .about-text .lead {
+                font-size: 1.1rem;
+            }
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -885,152 +983,201 @@
         </style>
     </section>
 
-    <!-- Info Section
-    <section class="info-section">
+    <!-- About ICHSM Section -->
+    <section class="about-ichsm-section">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="info-card">
-                        <i class="fas fa-calendar-check info-icon"></i>
-                        <h3 class="info-title">Important Dates</h3>
-                        <ul class="info-list">
-                            <li>
-                                <i class="fas fa-clock"></i>
-                                <span>Abstract Submission: Sept 30, 2025</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-file-alt"></i>
-                                <span>Paper Submission: Oct 31, 2025</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-user-plus"></i>
-                                <span>Registration: Oct 31, 2025</span>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="about-content">
+                <div class="about-header">
+                    <h2>About ICHSM 2026</h2>
+                    <div class="underline"></div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="info-card">
-                        <i class="fas fa-users info-icon"></i>
-                        <h3 class="info-title">Conference Tracks</h3>
-                        <ul class="info-list">
-                            <li>
-                                <i class="fas fa-laptop"></i>
-                                <span>Digital Humanities</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Social Sciences Research</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Management Innovation</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="info-card">
-                        <i class="fas fa-star info-icon"></i>
-                        <h3 class="info-title">Highlights</h3>
-                        <ul class="info-list">
-                            <li>
-                                <i class="fas fa-microphone"></i>
-                                <span>Keynote Speakers</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-comments"></i>
-                                <span>Panel Discussions</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-handshake"></i>
-                                <span>Networking Events</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="about-text">
+                    <p class="lead">Redefining Humanities, Social Sciences, and Management in the Digital Age</p>
+                    <p>The ICHSM-2026 serves as a crucial platform for scholars, researchers, industry experts, and policymakers to explore the transformative impact of digital technologies across diverse academic and professional domains.</p>
+                    <p>In an era where artificial intelligence, big data, blockchain, and automation are reshaping traditional paradigms, this conference aims to foster interdisciplinary discussions on the evolving roles of literature, sociology, economics, psychology, political science, and business management.</p>
+                    <a href="about.html" class="about-btn">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
-    </section> -->
-      <!-- START: Important Dates and Countdown Section -->
-<div class="countdown-container">
-    <div class="important-dates">
-      <h2>Important Dates</h2>
-      <ul>
-        <li>Abstract Submission: <span>Sept 30, 2025</span></li>
-        <li>Paper Submission: <span>Oct 31, 2025</span></li>
-        <li>Registration: <span>Oct 31, 2025</span></li>
-        <li>Conference Dates: <span>Feb 26-28, 2026</span></li>
-      </ul>
-    </div>
-  
-    <div class="countdown">
-      <h2>Conference Countdown</h2>
-      <div class="timer-row">
-        <div class="box">
-          <div class="number" id="days">0</div>
-          <div class="label">DAYS</div>
+        <style>
+            .about-ichsm-section {
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+                padding: 60px 0;
+                margin-top: 40px;
+            }
+            .about-content {
+                max-width: 800px;
+                margin: 0 auto;
+                background: #fff;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            .about-content::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #1a237e, #2196f3);
+            }
+            .about-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .about-header h2 {
+                color: #1a237e;
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+            .about-header .underline {
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(90deg, #1a237e, #2196f3);
+                margin: 0 auto;
+                border-radius: 2px;
+            }
+            .about-text {
+                color: #444;
+                line-height: 1.8;
+            }
+            .about-text .lead {
+                color: #1a237e;
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .about-text p {
+                margin-bottom: 15px;
+                font-size: 1.05rem;
+            }
+            .about-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                background: linear-gradient(135deg, #1a237e, #2196f3);
+                color: #fff;
+                padding: 12px 25px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: 20px;
+                transition: all 0.3s ease;
+            }
+            .about-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+                color: #fff;
+            }
+            .about-btn i {
+                transition: transform 0.3s ease;
+            }
+            .about-btn:hover i {
+                transform: translateX(5px);
+            }
+            @media (max-width: 768px) {
+                .about-ichsm-section {
+                    padding: 40px 0;
+                }
+                .about-content {
+                    padding: 30px 20px;
+                }
+                .about-header h2 {
+                    font-size: 1.8rem;
+                }
+                .about-text .lead {
+                    font-size: 1.1rem;
+                }
+                .about-text p {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- START: Important Dates and Countdown Section -->
+    <div class="countdown-container">
+        <div class="important-dates">
+          <h2>Important Dates</h2>
+          <ul>
+            <li>Abstract Submission: <span>Sept 30, 2025</span></li>
+            <li>Paper Submission: <span>Oct 31, 2025</span></li>
+            <li>Registration: <span>Oct 31, 2025</span></li>
+            <li>Conference Dates: <span>Feb 26-28, 2026</span></li>
+          </ul>
         </div>
-        <div class="box">
-          <div class="number" id="hours">0</div>
-          <div class="label">HOURS</div>
-        </div>
-        <div class="box">
-          <div class="number" id="minutes">0</div>
-          <div class="label">MINUTES</div>
-        </div>
-        <div class="box">
-          <div class="number" id="seconds">0</div>
-          <div class="label">SECONDS</div>
+      
+        <div class="countdown">
+          <h2>Conference Countdown</h2>
+          <div class="timer-row">
+            <div class="box">
+              <div class="number" id="days">0</div>
+              <div class="label">DAYS</div>
+            </div>
+            <div class="box">
+              <div class="number" id="hours">0</div>
+              <div class="label">HOURS</div>
+            </div>
+            <div class="box">
+              <div class="number" id="minutes">0</div>
+              <div class="label">MINUTES</div>
+            </div>
+            <div class="box">
+              <div class="number" id="seconds">0</div>
+              <div class="label">SECONDS</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- END -->
-  <!-- START: Countdown + Dates Styles -->
-  <style>
-    .countdown-container {
-      display: flex;
-      flex-wrap: wrap;
-      background: #ffffff;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-      gap: 50px;
-      max-width: 1000px;
-      margin: 40px auto;
-      align-items: flex-start;
-      justify-content: space-between;
+      <!-- END -->
+      <!-- START: Countdown + Dates Styles -->
+      <style>
+        .countdown-container {
+          display: flex;
+          flex-wrap: wrap;
+          background: #ffffff;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          border-radius: 20px;
+          padding: 40px;
+          gap: 50px;
+          max-width: 1000px;
+          margin: 40px auto;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+      
+        .important-dates {
+          flex: 1;
+        }
+      
+        .important-dates h2 {
+          font-size: 24px;
+          color: #0b0423;
+          margin-bottom: 10px;
+          border-bottom: 3px solid #a104f5;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+      
+        .important-dates ul {
+          list-style: none;
+          padding: 0;
+          margin: 20px 0 0;
+        }
+      
+        .important-dates li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 16px;
+        border-bottom: 1px solid #eee;
+        flex-wrap: wrap;
+        gap: 5px;
     }
-  
-    .important-dates {
-      flex: 1;
-    }
-  
-    .important-dates h2 {
-      font-size: 24px;
-      color: #0b0423;
-      margin-bottom: 10px;
-      border-bottom: 3px solid #a104f5;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-  
-    .important-dates ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0;
-    }
-  
-    .important-dates li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    font-size: 16px;
-    border-bottom: 1px solid #eee;
-    flex-wrap: wrap;
-    gap: 5px;
-}
 
   
     .important-dates li span {
