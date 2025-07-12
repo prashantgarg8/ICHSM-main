@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a237e;
@@ -96,33 +98,7 @@
             text-align: center;
         }
 
-        .fee-table {
-            width: 100%;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
 
-        .fee-table th {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem;
-            text-align: left;
-        }
-
-        .fee-table td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .fee-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .fee-table tbody tr:hover {
-            background-color: rgba(33, 150, 243, 0.05);
-        }
 
         .payment-info {
             background: rgba(33, 150, 243, 0.1);
@@ -182,11 +158,6 @@
             .registration-card {
                 padding: 1.5rem;
             }
-
-            .fee-table {
-                display: block;
-                overflow-x: auto;
-            }
         }
 
         /* Add these styles to the existing style section */
@@ -219,29 +190,7 @@
             min-width: 200px;
         }
 
-        .fee-table {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
 
-        .fee-table th {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1.2rem;
-            font-weight: 600;
-        }
-
-        .fee-table td {
-            padding: 1.2rem;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .fee-table tr:hover td {
-            background: rgba(33, 150, 243, 0.05);
-        }
 
         /* Enhanced Button Animations */
         .animated-btn {
@@ -409,6 +358,229 @@
             font-size: 1.2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+
+        /* Enhanced Responsive Fee Table Styles */
+        .fee-table-desktop {
+            margin-bottom: 2rem;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .fee-table th {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fee-table td {
+            padding: 1rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+        }
+
+        .fee-table tbody tr:hover {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.03), rgba(26, 35, 126, 0.03));
+            transform: translateY(-1px);
+        }
+
+        .fee-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fee-table th:not(:last-child),
+        .fee-table td:not(:last-child) {
+            border-right: 1px solid rgba(0,0,0,0.07);
+        }
+
+        /* Mobile Fee Cards */
+        .fee-cards-mobile {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .fee-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .fee-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary);
+        }
+
+        .fee-card-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .fee-card-header h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fee-card-body {
+            padding: 1.2rem;
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+
+        .fee-item:hover {
+            background: rgba(33, 150, 243, 0.03);
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+            border-radius: 6px;
+        }
+
+        .fee-label {
+            font-weight: 500;
+            color: #34495e;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fee-amount {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .fee-cards-mobile {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .fee-card {
+                margin-bottom: 0.5rem;
+                border-radius: 16px;
+                box-shadow: 0 4px 18px rgba(30,40,90,0.10);
+                overflow: hidden;
+                background: #fff;
+                border: none;
+            }
+            .fee-card-header {
+                background: linear-gradient(90deg, #1a237e 60%, #2196f3 100%);
+                color: #fff;
+                padding: 1.1rem 1rem 1rem 1rem;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                font-size: 1.05rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+                text-align: center;
+            }
+            .fee-card-body {
+                background: #f8fafd;
+                padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+            }
+            .fee-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center !important;
+                justify-content: space-between;
+                min-height: 36px;
+                padding: 0.7rem 0;
+                border-bottom: 1px solid #e6eaf0;
+            }
+            .fee-label, .fee-amount {
+                font-size: 1.05rem;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+                align-self: center !important;
+                vertical-align: middle !important;
+                display: inline-block;
+            }
+            .fee-label {
+                color: #7b8a9a;
+                font-weight: 500;
+            }
+            .fee-amount {
+                color: #1a237e;
+                font-weight: 700;
+            }
+            .fee-item:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fee-card-body {
+                padding: 1rem;
+            }
+
+            .fee-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            .fee-amount {
+                align-self: flex-end;
+            }
+        }
+
+        /* Large screen optimizations */
+        @media (min-width: 1200px) {
+            .fee-table {
+                max-width: 900px;
+                margin: 0 auto 2rem;
+            }
+            
+            .fee-table th,
+            .fee-table td {
+                padding: 0.9rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
@@ -482,19 +654,19 @@
                 <ul class="important-dates">
                     <li>
                         <span>Abstract Submission Deadline</span>
-                        <span>December 15, 2025</span>
+                        <span>September 30, 2025</span>
                     </li>
                     <li>
-                        <span>Notification of Acceptance</span>
-                        <span>December 31, 2025</span>
+                        <span>Paper Submission</span>
+                        <span>October 31, 2025</span>
                     </li>
                     <li>
-                        <span>Early Bird Registration</span>
-                        <span>January 15, 2026</span>
+                        <span>Registration</span>
+                        <span>October 31, 2025</span>
                     </li>
                     <li>
-                        <span>Regular Registration</span>
-                        <span>February 10, 2026</span>
+                        <span>Conference Dates</span>
+                        <span>Feb 26-28, 2026</span>
                     </li>
                 </ul>
             </div>
@@ -502,37 +674,108 @@
             <!-- Registration Fees -->
             <div class="registration-card" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="mb-4">Registration Fees</h3>
-                <table class="fee-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Early Bird (Until Jan 15)</th>
-                            <th>Regular</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Academic Delegates (International)</td>
-                            <td>USD 300</td>
-                            <td>USD 350</td>
-                        </tr>
-                        <tr>
-                            <td>Academic Delegates (Indian)</td>
-                            <td>INR 5000</td>
-                            <td>INR 6000</td>
-                        </tr>
-                        <tr>
-                            <td>Industry Professionals</td>
-                            <td>INR 7000</td>
-                            <td>INR 8000</td>
-                        </tr>
-                        <tr>
-                            <td>Students/Research Scholars</td>
-                            <td>INR 3000</td>
-                            <td>INR 4000</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
+                <!-- Desktop Table -->
+                <div class="fee-table-desktop d-none d-lg-block">
+                    <table class="fee-table">
+                        <thead>
+                            <tr>
+                                <th>Participants</th>
+                                <th>Abroad</th>
+                                <th>India</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Industry</td>
+                                <td>300 USD</td>
+                                <td>1000 INR</td>
+                            </tr>
+                            <tr>
+                                <td>Academicians</td>
+                                <td>200 USD</td>
+                                <td>6000 INR</td>
+                            </tr>
+                            <tr>
+                                <td>Research Scholars</td>
+                                <td>100 USD</td>
+                                <td>3000 INR</td>
+                            </tr>
+                            <tr>
+                                <td>Students (UG/PG)</td>
+                                <td>-</td>
+                                <td>1000 INR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Mobile Cards -->
+                <div class="fee-cards-mobile d-lg-none">
+                    <div class="fee-card">
+                        <div class="fee-card-header">
+                            <h4>Industry</h4>
+                        </div>
+                        <div class="fee-card-body">
+                            <div class="fee-item">
+                                <span class="fee-label">Abroad:</span>
+                                <span class="fee-amount">300 USD</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">India:</span>
+                                <span class="fee-amount">1000 INR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fee-card">
+                        <div class="fee-card-header">
+                            <h4>Academicians</h4>
+                        </div>
+                        <div class="fee-card-body">
+                            <div class="fee-item">
+                                <span class="fee-label">Abroad:</span>
+                                <span class="fee-amount">200 USD</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">India:</span>
+                                <span class="fee-amount">6000 INR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fee-card">
+                        <div class="fee-card-header">
+                            <h4>Research Scholars</h4>
+                        </div>
+                        <div class="fee-card-body">
+                            <div class="fee-item">
+                                <span class="fee-label">Abroad:</span>
+                                <span class="fee-amount">100 USD</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">India:</span>
+                                <span class="fee-amount">3000 INR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fee-card">
+                        <div class="fee-card-header">
+                            <h4>Students (UG/PG)</h4>
+                        </div>
+                        <div class="fee-card-body">
+                            <div class="fee-item">
+                                <span class="fee-label">Abroad:</span>
+                                <span class="fee-amount">-</span>
+                            </div>
+                            <div class="fee-item">
+                                <span class="fee-label">India:</span>
+                                <span class="fee-amount">1000 INR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="payment-info">
                     <h4 class="mb-3">Payment Information</h4>
