@@ -748,6 +748,121 @@
                 font-size: 1rem;
             }
         }
+
+        .countdown-container {
+          display: flex;
+          flex-wrap: wrap;
+          background: #fff;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+          border-radius: 16px;
+          padding: 32px 24px;
+          gap: 40px;
+          max-width: 900px;
+          margin: 32px auto;
+          align-items: flex-start;
+          justify-content: space-between;
+          border: 1px solid #ececec;
+        }
+        .important-dates {
+          flex: 1;
+        }
+        .important-dates h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #e0e0e0;
+          display: inline-block;
+          padding-bottom: 4px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
+        .important-dates ul {
+          list-style: none;
+          padding: 0;
+          margin: 18px 0 0;
+        }
+        .important-dates li {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          font-size: 15px;
+          border-bottom: 1px solid #f3f3f3;
+          flex-wrap: wrap;
+          gap: 5px;
+        }
+        .important-dates li span {
+          color: #444;
+          font-weight: 500;
+        }
+        .countdown {
+          flex: 1;
+          text-align: center;
+        }
+        .countdown h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 24px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
+        .timer-row {
+          display: flex;
+          justify-content: center;
+          gap: 0;
+          flex-wrap: nowrap;
+          border: 1px solid #ececec;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #fff;
+          box-shadow: none;
+        }
+        .box {
+          background: none;
+          color: #222;
+          padding: 18px 22px 10px 22px;
+          min-width: 70px;
+          border-right: 1px solid #ececec;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .box:last-child {
+          border-right: none;
+        }
+        .box .number {
+          font-size: 2.1rem;
+          font-weight: 700;
+          font-family: 'Poppins', 'Lato', Arial, sans-serif;
+          margin-bottom: 2px;
+          color: #1a237e;
+          letter-spacing: 1px;
+        }
+        .box .label {
+          font-size: 11px;
+          color: #888;
+          margin-top: 0;
+          letter-spacing: 1px;
+          font-weight: 500;
+        }
+        @media (max-width: 768px) {
+          .countdown-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 6px;
+            gap: 18px;
+          }
+          .timer-row {
+            width: 100%;
+          }
+          .box {
+            min-width: 55px;
+            padding: 12px 8px 6px 8px;
+          }
+          .countdown h2, .important-dates h2 {
+            font-size: 18px;
+          }
+        }
     </style>
 </head>
 <body>
@@ -1104,15 +1219,16 @@
         .countdown-container {
           display: flex;
           flex-wrap: wrap;
-          background: #ffffff;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-          border-radius: 20px;
-          padding: 40px;
-          gap: 50px;
-          max-width: 1000px;
-          margin: 40px auto;
+          background: #fff;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+          border-radius: 16px;
+          padding: 32px 24px;
+          gap: 40px;
+          max-width: 900px;
+          margin: 32px auto;
           align-items: flex-start;
           justify-content: space-between;
+          border: 1px solid #ececec;
         }
       
         .important-dates {
@@ -1120,109 +1236,138 @@
         }
       
         .important-dates h2 {
-          font-size: 24px;
-          color: #0b0423;
+          font-size: 22px;
+          color: #222;
           margin-bottom: 10px;
-          border-bottom: 3px solid #a104f5;
+          border-bottom: 2px solid #e0e0e0;
           display: inline-block;
-          padding-bottom: 5px;
+          padding-bottom: 4px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
         }
       
         .important-dates ul {
           list-style: none;
           padding: 0;
-          margin: 20px 0 0;
+          margin: 18px 0 0;
         }
       
         .important-dates li {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        font-size: 16px;
-        border-bottom: 1px solid #eee;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-  
-    .important-dates li span {
-      color: #8000d8;
-      font-weight: bold;
-    }
-  
-    .countdown {
-      flex: 1;
-      text-align: center;
-    }
-  
-    .countdown h2 {
-      font-size: 24px;
-      color: #0b0423;
-      margin-bottom: 30px;
-    }
-  
-    .timer-row {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: nowrap;
-    }
-  
-    .box {
-      background: linear-gradient(135deg, #28aee7, #72d0f4);
-      color: white;
-      padding: 20px 25px;
-      border-radius: 16px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      min-width: 90px;
-    }
-  
-    .box .number {
-      font-size: 28px;
-      font-weight: bold;
-    }
-  
-    .box .label {
-      font-size: 12px;
-      margin-top: 5px;
-      letter-spacing: 1px;
-    }
-  
-    @media (max-width: 768px) {
-      .countdown-container {
-        flex-direction: column;
-        align-items: center;
-      }
-  
-      .timer-row {
-        flex-wrap: wrap;
-      }
-    }
-  </style>
-  <!-- END -->
-  <!-- START: Countdown Script -->
-  <script>
-    const targetDate = new Date("Feb 26, 2026 00:00:00").getTime();
-  
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-  
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-    }
-  
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-  <!-- END -->
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          font-size: 15px;
+          border-bottom: 1px solid #f3f3f3;
+          flex-wrap: wrap;
+          gap: 5px;
+        }
+      
+        .important-dates li span {
+          color: #444;
+          font-weight: 500;
+        }
+      
+        .countdown {
+          flex: 1;
+          text-align: center;
+        }
+      
+        .countdown h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 24px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
+      
+        .timer-row {
+          display: flex;
+          justify-content: center;
+          gap: 0;
+          flex-wrap: nowrap;
+          border: 1px solid #ececec;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #fff;
+          box-shadow: none;
+        }
+      
+        .box {
+          background: none;
+          color: #222;
+          padding: 18px 22px 10px 22px;
+          min-width: 70px;
+          border-right: 1px solid #ececec;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        .box:last-child {
+          border-right: none;
+        }
+      
+        .box .number {
+          font-size: 2.1rem;
+          font-weight: 700;
+          font-family: 'Poppins', 'Lato', Arial, sans-serif;
+          margin-bottom: 2px;
+          color: #1a237e;
+          letter-spacing: 1px;
+        }
+      
+        .box .label {
+          font-size: 11px;
+          color: #888;
+          margin-top: 0;
+          letter-spacing: 1px;
+          font-weight: 500;
+        }
+      
+        @media (max-width: 768px) {
+          .countdown-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 6px;
+            gap: 18px;
+          }
+          .timer-row {
+            width: 100%;
+          }
+          .box {
+            min-width: 55px;
+            padding: 12px 8px 6px 8px;
+          }
+          .countdown h2, .important-dates h2 {
+            font-size: 18px;
+          }
+        }
+      </style>
+      <!-- END -->
+      <!-- START: Countdown Script -->
+      <script>
+        const targetDate = new Date("Feb 26, 2026 00:00:00").getTime();
+      
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+      
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+          document.getElementById("days").innerText = days;
+          document.getElementById("hours").innerText = hours;
+          document.getElementById("minutes").innerText = minutes;
+          document.getElementById("seconds").innerText = seconds;
+        }
+      
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+      </script>
+      <!-- END -->
   
 
     <!-- Chief Patrons & Patrons Section -->
