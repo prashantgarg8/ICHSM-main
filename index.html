@@ -1371,46 +1371,91 @@
   
 
     <!-- Chief Patrons & Patrons Section -->
-    <section class="patrons-section py-5">
+    <section class="patrons-section-minimal py-5">
       <div class="container">
-        <h2 class="text-center mb-4" style="color: #2ac0e1; font-weight: 600;">CHIEF PATRONS</h2>
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-3 text-center mb-4">
-            <img src="images/chief1.png" alt="Shri Jaiprakash Gaur Ji" class="img-fluid rounded mb-2 patron-img">
-            <div style="font-weight:600;">Shri Jaiprakash Gaur Ji</div>
-            <div style="font-size:0.95em;">Founder Chancellor, JIIT</div>
+        <h2 class="section-title text-center mb-4">Chief Patrons</h2>
+        <div class="row justify-content-center mb-4 g-4">
+          <div class="col-6 col-md-3 text-center">
+            <div class="patron-card">
+              <img src="images/chief1.png" alt="Shri Jaiprakash Gaur Ji" class="patron-img-minimal mb-2">
+              <div class="patron-name">Shri Jaiprakash Gaur Ji</div>
+              <div class="patron-role">Founder Chancellor, JIIT</div>
+            </div>
           </div>
-          <div class="col-md-3 text-center mb-4">
-            <img src="images/chief2.jpg" alt="Shri Manoj Gaur Ji" class="img-fluid rounded mb-2 patron-img">
-            <div style="font-weight:600;">Shri Manoj Gaur Ji</div>
-            <div style="font-size:0.95em;">Executive Chairman, Jaypee Group</div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="patron-card">
+              <img src="images/chief2.jpg" alt="Shri Manoj Gaur Ji" class="patron-img-minimal mb-2">
+              <div class="patron-name">Shri Manoj Gaur Ji</div>
+              <div class="patron-role">Executive Chairman, Jaypee Group</div>
+            </div>
           </div>
         </div>
-        <h2 class="text-center mb-4" style="color: #2ac0e1; font-weight: 600;">PATRONS</h2>
-        <div class="row justify-content-center">
-          <div class="col-md-3 text-center mb-4">
-            <img src="images/patron1.jpg" alt="Prof. S.C. Saxena" class="img-fluid rounded mb-2 patron-img">
-            <div style="font-weight:600;">Prof. S.C. Saxena</div>
-            <div style="font-size:0.95em;">Pro Chancellor, JIIT</div>
+        <h2 class="section-title text-center mb-4">Patrons</h2>
+        <div class="row justify-content-center g-4">
+          <div class="col-6 col-md-3 text-center">
+            <div class="patron-card">
+              <img src="images/patron1.jpg" alt="Prof. S.C. Saxena" class="patron-img-minimal mb-2">
+              <div class="patron-name">Prof. S.C. Saxena</div>
+              <div class="patron-role">Pro Chancellor, JIIT</div>
+            </div>
           </div>
-          <div class="col-md-3 text-center mb-4">
-            <img src="images/patron2.jpg" alt="Prof. Bodh Raj Mehta" class="img-fluid rounded mb-2 patron-img">
-            <div style="font-weight:600;">Prof. Bodh Raj Mehta</div>
-            <div style="font-size:0.95em;">Vice Chancellor, JIIT</div>
+          <div class="col-6 col-md-3 text-center">
+            <div class="patron-card">
+              <img src="images/patron2.jpg" alt="Prof. Bodh Raj Mehta" class="patron-img-minimal mb-2">
+              <div class="patron-name">Prof. Bodh Raj Mehta</div>
+              <div class="patron-role">Vice Chancellor, JIIT</div>
+            </div>
           </div>
         </div>
       </div>
       <style>
-        .patrons-section img {
-          border: 2px solid #a93226;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        .patrons-section-minimal {
+          background: #f4f9ff;
+        }
+        .patrons-section-minimal .section-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #1a237e;
+          letter-spacing: 0.5px;
+          margin-bottom: 1.5rem;
+        }
+        .patron-card {
           background: #fff;
+          border-radius: 16px;
+          box-shadow: 0 2px 8px rgba(30,40,90,0.06);
+          padding: 24px 12px 18px 12px;
+          margin: 0 auto;
+          max-width: 260px;
+          transition: box-shadow 0.2s;
+        }
+        .patron-card:hover {
+          box-shadow: 0 6px 18px rgba(30,40,90,0.10);
+        }
+        .patron-img-minimal {
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 2px solid #e0e0e0;
+          background: #fff;
+          box-shadow: 0 1px 4px rgba(30,40,90,0.07);
+          margin-bottom: 10px;
+        }
+        .patron-name {
+          font-size: 1.08rem;
+          font-weight: 600;
+          color: #222;
+          margin-bottom: 2px;
+        }
+        .patron-role {
+          font-size: 0.97rem;
+          color: #666;
+          font-weight: 400;
         }
         @media (max-width: 768px) {
-          .patrons-section .col-md-3 {
-            flex: 0 0 80%;
-            max-width: 80%;
-          }
+          .patron-card { max-width: 100%; padding: 18px 6px 14px 6px; }
+          .patron-img-minimal { width: 70px; height: 70px; }
+          .section-title { font-size: 1.15rem; }
         }
       </style>
     </section>
@@ -1696,7 +1741,7 @@
     </section>
 
     <!-- Department Section -->
-    <section class="department-section py-5">
+    <section class="department-section py-5" style="background: #f4f9ff;">
         <div class="container">
             <div class="section-header text-center mb-5">
                 <h2 class="display-5 fw-bold text-primary">Organised and Hosted by</h2>
@@ -1712,73 +1757,6 @@
                 </div>
             </div>
         </div>
-        <style>
-            .department-section {
-                background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-                padding: 80px 0;
-                position: relative;
-            }
-            .department-card {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 2rem;
-                background: var(--white);
-                border-radius: 15px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                transition: all 0.3s ease;
-            }
-            .department-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            }
-            .department-logo {
-                max-width: 150px;
-                margin: 0 auto 2rem;
-                transition: transform 0.3s ease;
-            }
-            .department-logo img {
-                width: 100%;
-                height: auto;
-            }
-            .department-card:hover .department-logo {
-                transform: scale(1.1);
-            }
-            .department-title {
-                color: var(--primary);
-                font-size: 2.2rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                background: linear-gradient(45deg, var(--primary), var(--secondary));
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-            .institution-name {
-                color: var(--secondary);
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 0.5rem;
-            }
-            .location {
-                color: var(--dark);
-                font-size: 1.2rem;
-                opacity: 0.8;
-            }
-            @media (max-width: 768px) {
-                .department-title {
-                    font-size: 1.8rem;
-                }
-                .institution-name {
-                    font-size: 1.3rem;
-                }
-                .location {
-                    font-size: 1.1rem;
-                }
-                .department-logo {
-                    max-width: 120px;
-                }
-            }
-        </style>
     </section>
 
     <!-- Footer -->
