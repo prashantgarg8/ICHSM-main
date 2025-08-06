@@ -1302,3 +1302,52 @@ nav ul li a:focus {
 #wrapper{
 	background: #f5f6f8;
 }
+
+/* Fix Bootstrap dropdown for navbar */
+.navbar .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    min-width: 200px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    display: none !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 4px !important;
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+}
+
+.navbar .dropdown-menu.show {
+    display: block !important;
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    /* Remove custom hover for Bootstrap navbars */
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.navbar .dropdown-item {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.5rem 1rem !important;
+    clear: both !important;
+    font-weight: 400 !important;
+    color: #212529 !important;
+    text-align: inherit !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.navbar .dropdown-item:hover {
+    color: #1e2125 !important;
+    background-color: #e9ecef !important;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none !important;
+}

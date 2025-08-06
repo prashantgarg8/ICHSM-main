@@ -558,6 +558,43 @@
             background: linear-gradient(90deg, var(--accent), transparent);
         }
 
+        /* Organiser Details Styles */
+        .organiser-details {
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .organiser-label {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .department-name {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
+        }
+
+        .institution-name {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+        }
+
+        .location-info {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
+        }
+
         @media (max-width: 992px) {
             .conference-title h1 {
                 font-size: 1.8rem;
@@ -567,6 +604,21 @@
             }
             .jiit-logo img {
                 height: 90px;
+            }
+            .organiser-details {
+                margin-top: 0.4rem;
+            }
+            .organiser-label {
+                font-size: 0.7rem;
+            }
+            .department-name {
+                font-size: 0.9rem;
+            }
+            .institution-name {
+                font-size: 0.8rem;
+            }
+            .location-info {
+                font-size: 0.75rem;
             }
         }
 
@@ -581,6 +633,9 @@
             }
             .jiit-logo img {
                 height: 80px;
+            }
+            .organiser-details {
+                margin-top: 0.3rem;
             }
         }
 
@@ -612,6 +667,24 @@
             .conference-title .year {
                 font-size: 1rem !important;
                 margin-top: 0.2rem !important;
+            }
+            .organiser-details {
+                margin-top: 0.2rem !important;
+            }
+            .organiser-label {
+                font-size: 0.65rem !important;
+                margin-bottom: 0.1rem !important;
+            }
+            .department-name {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.05rem !important;
+            }
+            .institution-name {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.05rem !important;
+            }
+            .location-info {
+                font-size: 0.7rem !important;
             }
         }
 
@@ -876,7 +949,12 @@
             </div>
             <div class="conference-title">
                 <h1>International Conference on Humanities, Social Sciences and Management (ICHSM 2026)</h1>
-        
+                <!-- <div class="organiser-details">
+                    <span class="organiser-label">Organised and Hosted by</span>
+                    <div class="department-name">Department of Humanities and Social Sciences</div>
+                    <div class="institution-name">Jaypee Institute of Information Technology</div>
+                    <div class="location-info">Noida - 62, Uttar Pradesh, India</div>
+                </div> -->
             </div>
         </div>
     </header>
@@ -895,7 +973,23 @@
                     <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
                     <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
                     <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-                    <li class="nav-item"><a class="nav-link" href="committee.html">Committee</a></li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" 
+                         href="#" 
+                         id="ichsmTeamDropdown" 
+                         role="button" 
+                         data-bs-toggle="dropdown" 
+                         aria-expanded="false"
+                         style="position: relative;">
+                        ICHSM Team <span style="margin-left: 5px; font-size: 0.8em;">▼</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="ichsmTeamDropdown">
+                        <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
+                        <li><a class="dropdown-item" href="advisory_committee.html">Advisory Committee</a></li>
+                      </ul>
+                    </li>
+                    
                     <li class="nav-item"><a class="nav-link" href="venue.html">Venue</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
