@@ -1599,18 +1599,24 @@
         border-radius: 4px;
       }
   
-      .track-cards {
+            .track-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
       }
-  
+
       .track-card {
         background-color: white;
         border-radius: 16px;
         box-shadow: 0 8px 20px rgba(0, 114, 255, 0.08);
         padding: 30px 20px;
         transition: all 0.3s ease;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
   
       .track-card:hover {
@@ -1644,27 +1650,45 @@
       }
   
       .center-card-row {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
         margin-top: 30px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
       }
   
-      @media (max-width: 768px) {
+            @media (max-width: 768px) {
         .tracks-section h2 {
           font-size: 2rem;
         }
-  
-        .track-card {
-          padding: 25px 15px;
+
+        .track-cards, .center-card-row {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+          gap: 20px;
         }
-  
+
+        .track-card {
+          padding: 25px 20px;
+          min-height: 250px;
+        }
+
         .track-desc {
           font-size: 0.9rem;
         }
-  
-        .center-card-row {
-          flex-direction: column;
-          align-items: center;
+      }
+
+      @media (max-width: 480px) {
+        .track-cards, .center-card-row {
+          max-width: 100%;
+          padding: 0 15px;
+        }
+
+        .track-card {
+          padding: 20px 15px;
+          min-height: 220px;
         }
       }
     </style>
@@ -1722,6 +1746,16 @@
   
       <!-- Centered Row -->
       <div class="center-card-row">
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-laptop-code"></i></div>
+          <div class="track-title">Digital Humanities</div>
+          <div class="track-desc">Exploring computational methods in humanities research, digital archives, and the intersection of technology with cultural heritage.</div>
+        </div>
+        <div class="track-card">
+          <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
+          <div class="track-title">National Education Policy (NEP)</div>
+          <div class="track-desc">Examining educational reforms, multidisciplinary approaches, and the integration of Indian knowledge systems in modern education.</div>
+        </div>
         <div class="track-card">
           <div class="icon-circle"><i class="fas fa-university"></i></div>
           <div class="track-title">Indian Knowledge System & NEP</div>
