@@ -125,6 +125,29 @@
             transform: translateY(-2px);
         }
 
+        /* QR + Buttons layout */
+        .qr-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .qr-image {
+            width: 180px;
+            max-width: 60%;
+            height: auto;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            padding: 10px;
+        }
+        .qr-caption {
+            font-size: 0.95rem;
+            color: #345;
+        }
+
         .important-dates {
             list-style: none;
             padding: 0;
@@ -786,18 +809,28 @@
                     </div>
                 </div>
 
-                <div class="payment-info">
+                <!-- <div class="payment-info">
                     <h4 class="mb-3">Payment Information</h4>
                     <p><strong>Bank Name:</strong> State Bank of India</p>
                     <p><strong>Account Name:</strong> ICHSM 2026</p>
                     <p><strong>Account Number:</strong> XXXX XXXX XXXX</p>
                     <p><strong>IFSC Code:</strong> XXXX0000XXX</p>
                     <p><strong>Swift Code:</strong> XXXXXXXX</p>
+                </div> -->
+
+                <!-- QR Code -->
+                <div class="qr-wrapper">
+                    <img id="payment-qr" src="images/payment qr code.PNG" alt="Scan to pay QR code" class="qr-image">
+                    <div class="qr-caption">Scan the QR to pay instantly</div>
                 </div>
 
-                <div class="text-center mt-4">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBzNDZyzr3UlBBYst0sVjon_NKGgL51PdLtzHctP_fWWnhoA/viewform" class="btn-register" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-user-plus me-2"></i>Register Now
+                    </a>
+                    <a id="pay-here-link" href="https://payments.cashfree.com/forms?code=WCSHSS" class="btn-register" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-credit-card me-2"></i>Pay Here
                     </a>
                 </div>
             </div>
@@ -806,7 +839,7 @@
             <div class="registration-card" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="mb-4">Registration Includes</h3>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-check-circle text-success me-2"></i>Conference Kit</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i>Conference Kit (Offline Participants Only)</li>
                     <li><i class="fas fa-check-circle text-success me-2"></i>Access to All Sessions</li>
                     <li><i class="fas fa-check-circle text-success me-2"></i>Conference Proceedings</li>
                     <li><i class="fas fa-check-circle text-success me-2"></i>Lunch and Refreshments</li>
