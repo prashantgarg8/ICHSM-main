@@ -51,6 +51,10 @@
             line-height: 1.6;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Logo Bar */
         .logo-bar {
             background: rgba(255, 255, 255, 0.95);
@@ -971,7 +975,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="call_for_papers.html">Call for Papers</a></li>
                     <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="speakers.html">Speakers & Guests</a></li>
                     <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
                     
                     <li class="nav-item dropdown">
@@ -1062,6 +1066,7 @@
     <!-- News Ticker (Sliding Message) -->
     <div class="news-ticker" style="background: none; color: #1a237e; padding: 0.6rem 0; font-weight: 700; font-size: 1.08rem; overflow: hidden; position: relative; font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; letter-spacing: 0.5px;">
       <div class="news-ticker-inner" style="white-space: nowrap; display: inline-block; animation: ticker-slide 30s linear infinite; animation-delay: 0s;">
+        <span style="margin-right: 3rem; color:#1a237e; font-family:inherit;">Chief Guest- Prof. Santishree Dhulipudi Pandit, Vice Chancellor, JNU &nbsp;|</span>
         <a href="brochure.pdf" target="_blank" rel="noopener" style="color:#1976d2; text-decoration:underline; font-weight:700; font-family:inherit;">Brochure Released!</a>
         <span style="margin:0 1.5rem; color:#1976d2;">|</span>
         <span style="margin-right: 3rem; color:#1a237e; font-family:inherit;">Abstract Submission is now open! &nbsp;|&nbsp; Submit your abstracts by October 15, 2025 &nbsp;|&nbsp; Conference Dates: Feb 26–28, 2026 &nbsp;|&nbsp; Venue: JIIT, Noida, India</span>
@@ -1232,6 +1237,7 @@
               </ul>
               <div class="tab-content" id="notifTabContent">
                 <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+                  <div class="mb-2"><span class="fw-bold text-primary">26 Sept</span> &mdash; We are honored to welcome Prof. Santishree Dhulipudi Pandit, Vice Chancellor, Jawaharlal Nehru University (JNU), as the <a href="#chief-guest-section" class="text-primary" style="text-decoration:underline; cursor:pointer;">Chief Guest</a> of ICHSM 2026.</div>
                   <div class="mb-2"><span class="fw-bold text-primary">10 July</span> &mdash; Brochure Released! <a href="brochure.pdf" target="_blank" rel="noopener" style="color:#1976d2; text-decoration:underline;">Download</a></div>
                 </div>
                 <div class="tab-pane fade" id="registration" role="tabpanel" aria-labelledby="registration-tab">
@@ -1466,30 +1472,30 @@
   
 
     <!-- Chief Patrons & Patrons Section -->
-    <section class="patrons-section-minimal py-5">
+    <section class="patrons-section-minimal py-3">
       <div class="container">
-        <h2 class="section-title text-center mb-4">Chief Patrons</h2>
-        <div class="row justify-content-center mb-4 g-4">
+        <h2 class="section-title text-center mb-2">Chief Patrons</h2>
+        <div class="row justify-content-center mb-2 g-3">
           <div class="col-6 col-md-3 text-center">
             <div class="patron-card">
-              <img src="images/chief1.png" alt="Shri Jaiprakash Gaur Ji" class="patron-img-minimal mb-2">
+              <img src="images/chief1.png" alt="Shri Jaiprakash Gaur Ji" class="patron-img-minimal mb-1">
               <div class="patron-name">Shri Jaiprakash Gaur Ji</div>
               <div class="patron-role">Founder Chancellor, JIIT</div>
             </div>
           </div>
           <div class="col-6 col-md-3 text-center">
             <div class="patron-card">
-              <img src="images/chief2.jpg" alt="Shri Manoj Gaur Ji" class="patron-img-minimal mb-2">
+              <img src="images/chief2.jpg" alt="Shri Manoj Gaur Ji" class="patron-img-minimal mb-1">
               <div class="patron-name">Shri Manoj Gaur Ji</div>
               <div class="patron-role">Executive Chairman, Jaypee Group</div>
             </div>
           </div>
         </div>
-        <h2 class="section-title text-center mb-4">Patrons</h2>
-        <div class="row justify-content-center g-4">
+        <h2 class="section-title text-center mb-2">Patrons</h2>
+        <div class="row justify-content-center g-3">
           <div class="col-6 col-md-3 text-center">
             <div class="patron-card">
-              <img src="images/patron1.jpg" alt="Prof. S.C. Saxena" class="patron-img-minimal mb-2">
+              <img src="images/patron1.jpg" alt="Prof. S.C. Saxena" class="patron-img-minimal mb-1">
               <div class="patron-name">Prof. S.C. Saxena</div>
               <div class="patron-role">Pro Chancellor, JIIT</div>
             </div>
@@ -1508,52 +1514,162 @@
           background: #f4f9ff;
         }
         .patrons-section-minimal .section-title {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           font-weight: 700;
           color: #1a237e;
           letter-spacing: 0.5px;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
         .patron-card {
           background: #fff;
-          border-radius: 16px;
+          border-radius: 12px;
           box-shadow: 0 2px 8px rgba(30,40,90,0.06);
-          padding: 24px 12px 18px 12px;
+          padding: 16px 10px 12px 10px;
           margin: 0 auto;
-          max-width: 260px;
+          max-width: 240px;
           transition: box-shadow 0.2s;
         }
         .patron-card:hover {
           box-shadow: 0 6px 18px rgba(30,40,90,0.10);
         }
         .patron-img-minimal {
-          width: 90px;
-          height: 90px;
+          width: 75px;
+          height: 75px;
           object-fit: cover;
           border-radius: 50%;
           border: 2px solid #e0e0e0;
           background: #fff;
           box-shadow: 0 1px 4px rgba(30,40,90,0.07);
-          margin-bottom: 10px;
+          margin-bottom: 6px;
         }
         .patron-name {
-          font-size: 1.08rem;
+          font-size: 0.95rem;
           font-weight: 600;
           color: #222;
           margin-bottom: 2px;
         }
         .patron-role {
-          font-size: 0.97rem;
+          font-size: 0.85rem;
           color: #666;
           font-weight: 400;
         }
         @media (max-width: 768px) {
-          .patron-card { max-width: 100%; padding: 18px 6px 14px 6px; }
-          .patron-img-minimal { width: 70px; height: 70px; }
-          .section-title { font-size: 1.15rem; }
+          .patron-card { max-width: 100%; padding: 14px 6px 10px 6px; }
+          .patron-img-minimal { width: 60px; height: 60px; }
+          .section-title { font-size: 1.1rem; }
         }
       </style>
     </section>
+
+    <!-- Chief Guest Section -->
+    <section id="chief-guest-section" class="chief-guest-section py-2" style="background: #f4f9ff;">
+        <div class="container">
+            <h2 class="section-title text-center mb-2">Chief Guest</h2>
+            <div class="row justify-content-center g-2">
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0 chief-guest-card">
+                        <div class="card-body text-center">
+                            <img src="images/chiefguest.png" alt="Chief Guest" class="chief-guest-img">
+                            <div class="chief-guest-details">
+                                <h3>Prof. Santishree Dhulipudi Pandit</h3>
+                                <div class="chief-guest-designation">Vice Chancellor, Jawaharlal Nehru University (JNU)</div>
+                                <div class="chief-guest-info">
+                                    <blockquote class="blockquote text-center">
+                                        <p class="mb-0">"She is the first woman and alumnus Vice-Chancellor of JNU, appointed on February 7, 2022, for a five-year term. Before her appointment, she was a professor for over three decades, primarily at Savitribai Phule Pune University."</p>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .chief-guest-section {
+                background: #f4f9ff;
+            }
+            .chief-guest-section .section-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: #1a237e;
+                letter-spacing: 0.5px;
+                margin-bottom: 0.8rem;
+            }
+            .chief-guest-card {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(30,40,90,0.06);
+                padding: 14px 10px 10px 10px;
+                margin: 0 auto;
+                max-width: 280px;
+                transition: box-shadow 0.2s, transform 0.2s;
+            }
+            .chief-guest-card:hover {
+                box-shadow: 0 6px 18px rgba(30,40,90,0.10);
+                transform: translateY(-3px);
+            }
+            .chief-guest-img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid #a2bcec;
+                margin-bottom: 6px;
+            }
+            .chief-guest-details h3 {
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #222;
+                margin-bottom: 2px;
+            }
+            .chief-guest-designation {
+                font-size: 0.85rem;
+                color: #666;
+                font-weight: 500;
+                margin-bottom: 0.6rem;
+            }
+            .chief-guest-info {
+                color: #666;
+                font-size: 0.75rem;
+                line-height: 1.3;
+                text-align: left;
+                margin-top: 0.6rem;
+            }
+            .chief-guest-info .blockquote {
+                border-left: 2px solid #1a237e;
+                padding-left: 0.6rem;
+                margin: 0;
+                font-style: italic;
+            }
+            .chief-guest-info .blockquote p {
+                color: #555;
+                font-size: 0.8rem;
+            }
+            @media (max-width: 768px) {
+                .chief-guest-card { 
+                    max-width: 100%; 
+                    padding: 12px 6px 8px 6px; 
+                }
+                .chief-guest-img { 
+                    width: 60px; 
+                    height: 60px; 
+                }
+                .section-title { 
+                    font-size: 1.1rem; 
+                }
+                .chief-guest-details h3 { 
+                    font-size: 0.9rem; 
+                }
+                .chief-guest-designation { 
+                    font-size: 0.8rem; 
+                }
+                .chief-guest-info { 
+                    font-size: 0.7rem; 
+                }
+            }
+        </style>
+    </section>
+
     <title>Conference Tracks</title>
 
     <!-- Font Awesome CDN -->

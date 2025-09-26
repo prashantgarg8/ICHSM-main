@@ -28,11 +28,95 @@
         .navbar { background: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .nav-link { color: var(--dark); font-weight: 500; padding: 1rem 1.5rem !important; transition: all 0.3s ease; }
         .nav-link:hover, .nav-link.active { color: var(--accent); }
-        .content-section { padding: 4rem 0; background: var(--light); }
+        .content-section { padding: 4rem 0; }
         .content-card { background: var(--white); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
         .section-title { color: var(--primary); font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
-        .to-be-announced { font-size: 3rem; font-weight: bold; color: var(--secondary); text-align: center; margin: 5rem 0; }
-        @media (max-width: 768px) { .header { padding: 1rem 0; } .logo-container img { height: 60px; } .section-title { font-size: 1.75rem; } .content-card { padding: 1.5rem; } .to-be-announced { font-size: 2rem; } }
+        .chief-guest-section { 
+            margin: 3rem 0; 
+        }
+        .chief-guest-section .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a237e;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+        .chief-guest-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(30,40,90,0.06);
+            padding: 14px 10px 10px 10px;
+            margin: 0 auto;
+            max-width: 280px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .chief-guest-card:hover {
+            box-shadow: 0 6px 18px rgba(30,40,90,0.10);
+            transform: translateY(-3px);
+        }
+        .chief-guest-img {
+            width: 86px;
+            height: 86px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #a2bcec;
+            margin-bottom: 1rem;
+        }
+        .chief-guest-details h3 {
+            font-size: 1.07rem;
+            font-weight: 600;
+            color: #233459;
+            margin-bottom: 0.5rem;
+        }
+        .chief-guest-designation {
+            font-size: 0.98rem;
+            color: #4862ae;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .chief-guest-info {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            text-align: left;
+            margin-top: 1rem;
+        }
+        .chief-guest-info .blockquote {
+            border-left: 2px solid #1a237e;
+            padding-left: 0.6rem;
+            margin: 0;
+            font-style: italic;
+        }
+        .chief-guest-info .blockquote p {
+            color: #555;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 768px) { 
+            .header { padding: 1rem 0; } 
+            .logo-container img { height: 60px; } 
+            .section-title { font-size: 1.75rem; } 
+            .content-card { padding: 1.5rem; } 
+            .chief-guest-card { 
+                max-width: 100%; 
+                padding: 12px 6px 8px 6px; 
+            }
+            .chief-guest-img { 
+                width: 60px; 
+                height: 60px; 
+            }
+            .chief-guest-section .section-title { 
+                font-size: 1.1rem; 
+            }
+            .chief-guest-details h3 { 
+                font-size: 0.9rem; 
+            }
+            .chief-guest-designation { 
+                font-size: 0.8rem; 
+            }
+            .chief-guest-info { 
+                font-size: 0.7rem; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -83,11 +167,31 @@
         </div>
     </nav>
     <!-- Main Content -->
-    <section class="content-section">
+    <section style="background: #e8f3fe; padding: 3rem 0;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Speakers</h2>
-            <div class="content-card" data-aos="fade-up">
-                <div class="to-be-announced">To be announced</div>
+            <h2 class="fw-bold text-center mb-4" style="color:#202861; font-size:2.1rem;">Speakers & Guests</h2>
+            
+            <!-- Chief Guest Section -->
+            <div class="chief-guest-section" data-aos="fade-up">
+                <h2 class="fw-bold text-center mb-4" style="color:#202861; font-size:2.1rem;">Chief Guest</h2>
+                <div class="row justify-content-center g-4">
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <div class="card shadow-sm border-0" style="border-radius:16px; width:100%; max-width:320px;">
+                            <div class="card-body text-center">
+                                <img src="images/chiefguest.png" alt="Chief Guest" class="chief-guest-img">
+                                <div class="chief-guest-details">
+                                    <h3>Prof. Santishree Dhulipudi Pandit</h3>
+                                    <div class="chief-guest-designation">Vice Chancellor, Jawaharlal Nehru University (JNU)</div>
+                                    <div class="chief-guest-info">
+                                        <blockquote class="blockquote text-center">
+                                            <p class="mb-0">"She is the first woman and alumnus Vice-Chancellor of JNU, appointed on February 7, 2022, for a five-year term. Before her appointment, she was a professor for over three decades, primarily at Savitribai Phule Pune University."</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
