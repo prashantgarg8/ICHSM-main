@@ -1237,6 +1237,7 @@
               </ul>
               <div class="tab-content" id="notifTabContent">
                 <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+                  <div class="mb-2"><span class="fw-bold text-primary">27 Oct</span> &mdash;  Dates have been extended! Please refer to the <a href="#" class="text-primary switch-to-dates" style="text-decoration:underline; cursor:pointer;">Important Dates tab</a> for updated deadlines.</div>
                   <div class="mb-2"><span class="fw-bold text-primary">26 Sept</span> &mdash; We are honored to welcome Prof. Santishree Dhulipudi Pandit, Vice Chancellor, Jawaharlal Nehru University (JNU), as the <a href="#chief-guest-section" class="text-primary" style="text-decoration:underline; cursor:pointer;">Chief Guest</a> of ICHSM 2026.</div>
                   <div class="mb-2"><span class="fw-bold text-primary">10 July</span> &mdash; Brochure Released! <a href="brochure.pdf" target="_blank" rel="noopener" style="color:#1976d2; text-decoration:underline;">Download</a></div>
                 </div>
@@ -2058,6 +2059,21 @@
         AOS.init({
             duration: 1000,
             once: true
+        });
+        
+        // Handle tab switching for the Important Dates link
+        document.addEventListener('DOMContentLoaded', function() {
+            var switchToDatesLink = document.querySelector('.switch-to-dates');
+            if (switchToDatesLink) {
+                switchToDatesLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var datesTabButton = document.querySelector('#dates-tab');
+                    if (datesTabButton) {
+                        var tab = new bootstrap.Tab(datesTabButton);
+                        tab.show();
+                    }
+                });
+            }
         });
     </script>
 
