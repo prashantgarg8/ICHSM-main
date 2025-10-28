@@ -1284,11 +1284,11 @@
     <!-- START: Important Dates and Countdown Section -->
     <div class="countdown-container">
         <div class="important-dates">
-          <h2>Important Dates</h2>
+          <h2>Important Dates <span class="deadline-badge">DEADLINES EXTENDED!!</span></h2>
           <ul>
-            <li>Abstract Submission: <span>Nov 30, 2025</span></li>
-            <li>Paper Submission: <span>Dec 15, 2025</span></li>
-            <li>Registration: <span>Dec 15, 2025</span></li>
+            <li>Abstract Submission: <div class="date-container"><span class="old-date">Oct 31, 2025</span><span>Nov 30, 2025</span></div></li>
+            <li>Paper Submission: <div class="date-container"><span class="old-date">Nov 15, 2025</span><span>Dec 15, 2025</span></div></li>
+            <li>Registration: <div class="date-container"><span class="old-date">Oct 31, 2025</span><span>Dec 15, 2025</span></div></li>
             <li>Conference Dates: <span>Feb 26-28, 2026</span></li>
           </ul>
         </div>
@@ -1336,6 +1336,31 @@
         .important-dates {
           flex: 1;
         }
+
+        .deadline-badge {
+          display: inline-block;
+          color: #dc3545;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1.2px;
+          padding-left: 12px;
+          position: relative;
+          animation: pulse-red 2s ease-in-out infinite;
+          text-decoration: none !important;
+          border-bottom: none !important;
+        }
+
+        @keyframes pulse-red {
+          0%, 100% { 
+            opacity: 1;
+            color: #dc3545;
+          }
+          50% { 
+            opacity: 0.6;
+            color: #c82333;
+          }
+        }
       
         .important-dates h2 {
           font-size: 22px;
@@ -1367,6 +1392,20 @@
         .important-dates li span {
           color: #444;
           font-weight: 500;
+        }
+        
+        .old-date {
+          text-decoration: line-through;
+          color: #999;
+          font-size: 13px;
+          margin-right: 8px;
+        }
+        
+        .date-container {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 5px;
         }
       
         .countdown {
@@ -1443,6 +1482,20 @@
           }
           .countdown h2, .important-dates h2 {
             font-size: 18px;
+          }
+          .deadline-badge {
+            font-size: 10px !important;
+            letter-spacing: 0.8px !important;
+            padding-left: 8px !important;
+          }
+          .date-container {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
+          }
+          .old-date {
+            font-size: 12px;
+            margin-right: 0;
           }
         }
       </style>
