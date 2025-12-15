@@ -527,6 +527,47 @@
             text-align: center;
         }
 
+        .ichsm-logo-section {
+            display: flex;
+            align-items: center;
+            min-width: 120px;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .ichsm-logo {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+        }
+        
+        .ichsm-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: none;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            display: block;
+            background: transparent;
+        }
+        
+        /* Ensure logo section background matches header perfectly */
+        .ichsm-logo-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: none;
+            box-shadow: none;
+        }
+        
+        /* If logo has white background, blend it with header */
+        .ichsm-logo img {
+            background-color: transparent;
+        }
+
         .conference-title h1 {
             color: var(--primary);
             font-size: 2.4rem;
@@ -609,6 +650,9 @@
             .jiit-logo img {
                 height: 90px;
             }
+            .ichsm-logo img {
+                height: 90px;
+            }
             .organiser-details {
                 margin-top: 0.4rem;
             }
@@ -628,14 +672,33 @@
 
         @media (max-width: 768px) {
             .conference-header {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
                 text-align: center;
-                gap: 1.5rem;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+            }
+            /* Keep logos side by side on mobile */
+            .logo-section {
+                order: 1;
+                flex: 0 0 auto;
+            }
+            .ichsm-logo-section {
+                order: 2;
+                flex: 0 0 auto;
             }
             .conference-title {
+                order: 3;
+                flex: 1 1 100%;
                 text-align: center;
+                width: 100%;
+                margin-top: 0.5rem;
             }
             .jiit-logo img {
+                height: 80px;
+            }
+            .ichsm-logo img {
                 height: 80px;
             }
             .organiser-details {
@@ -648,19 +711,45 @@
                 padding: 10px 0 !important;
             }
             .conference-header {
-                gap: 1rem !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
                 padding: 0 10px !important;
+                justify-content: center !important;
+                align-items: center !important;
             }
             .logo-section {
                 min-width: 70px !important;
                 padding: 0 !important;
+                order: 1 !important;
+                flex: 0 0 auto !important;
+                margin-right: 5px !important;
+            }
+            .ichsm-logo-section {
+                min-width: 70px !important;
+                padding: 0 !important;
+                order: 2 !important;
+                flex: 0 0 auto !important;
             }
             .jiit-logo {
+                max-width: 70px !important;
+            }
+            .ichsm-logo {
                 max-width: 70px !important;
             }
             .jiit-logo img {
                 height: 50px !important;
                 max-width: 70px !important;
+            }
+            .ichsm-logo img {
+                height: 50px !important;
+                max-width: 70px !important;
+            }
+            .conference-title {
+                order: 3 !important;
+                flex: 1 1 100% !important;
+                width: 100% !important;
+                margin-top: 0.5rem !important;
             }
             .conference-title h1 {
                 font-size: 1.1rem !important;
@@ -958,6 +1047,11 @@
                     <div class="department-name">Department of Humanities and Social Sciences</div>
                     <div class="institution-name">Jaypee Institute of Information Technology</div>
                     <div class="location-info">Noida - 62, Uttar Pradesh, India</div>
+                </div>
+            </div>
+            <div class="ichsm-logo-section">
+                <div class="ichsm-logo">
+                    <img src="logos_ichsm (1).png" alt="ICHSM 2026 Logo" loading="eager">
                 </div>
             </div>
         </div>
