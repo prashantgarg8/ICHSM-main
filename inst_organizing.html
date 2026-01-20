@@ -153,6 +153,18 @@
             transform: translateY(-1px);
         }
 
+        /* Multi-column layout for institutional committee */
+        .committee-directory-list {
+            column-count: 1;
+            column-gap: 0;
+        }
+
+        .committee-directory-list .committee-member-row {
+            break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
         .role-badge {
             font-weight: 600;
             letter-spacing: 0.2px;
@@ -194,6 +206,12 @@
 
             .committee-card {
                 padding: 1.5rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .committee-directory-list {
+                column-count: 2;
             }
         }
     </style>
@@ -274,183 +292,126 @@
       <div class="col-12 col-lg-10">
         <div class="card shadow-sm border-0" style="border-radius:16px;">
           <div class="card-body p-0 committee-directory">
-            <div class="row g-0">
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Prof. (Dr) Alka Sharma</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Professor</span>
-                </div>
+            <div class="committee-directory-list">
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Prof. (Dr) Alka Sharma</div>
+                <span class="badge rounded-pill role-badge role-assistant">Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Alok Singh</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Alok Kumar Singh</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Amba Agarwal</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Amba Agarwal</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Anshu Banwari</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Ankita Mishra</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Ashu Kumari</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Anshu Banwari</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Badri Bajaj</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Associate Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Ashu Kumari</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Chander Shekhar</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Badri Bajaj</div>
+                <span class="badge rounded-pill role-badge role-assistant">Associate Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Deepak Verma</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Chander Shekhar</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Ekta Singh</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Deepak Verma</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Himanshi Lohmore</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Ekta Singh</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Ekta Srivastava</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Ekta Srivastava</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Ila Joshi</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Himanshi Lohmore</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Meenakshi Mishra</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Ila Joshi</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Mohua Dutta</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Kanu Priya</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Namreeta Kumari</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Meenakshi Mishra</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Neha Singh</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Mohua Dutta</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Nibha Sinha</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Namreeta Kumari</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Nilu Choudhary</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Neha Singh</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Paridhi Chaudhary</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Nibha Sinha</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Praveen Sharma</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Nilu Choudhary</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Priya</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Paridhi Chaudhary</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Kanu Priya</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Praveen Sharma</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Prof. Sanjay Kumar</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Professor of Practice</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Priya</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Shikha Kumari</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Prof. Sanjay Kumar</div>
+                <span class="badge rounded-pill role-badge role-assistant">Professor of Practice</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Shweta Verma</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Shikha Kumari</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Suraj Das</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Shweta Verma</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Vandana Chandel</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Suraj Das</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Ms. Vandana Sehgal</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Ms. Vandana Chandel</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
-                  <div style="font-weight:600; color:#233459;">Dr. Yogita Naruka</div>
-                  <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
-                </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Vandana Sehgal</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
+              </div>
+              <div class="committee-member-row d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div style="font-weight:600; color:#233459;">Dr. Yogita Naruka</div>
+                <span class="badge rounded-pill role-badge role-assistant">Assistant Professor</span>
               </div>
             </div>
           </div>
