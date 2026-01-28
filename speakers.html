@@ -117,6 +117,151 @@
                 font-size: 0.7rem; 
             }
         }
+        /* ===== CLEAN MODERN SPEAKER UPGRADE ===== */
+
+.speaker-card{
+    max-width: 380px !important;
+    border-radius: 18px !important;
+    padding-top: 22px;
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+.speaker-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12) !important;
+}
+
+/* Bigger photo */
+.speaker-card .chief-guest-img{
+    width: 140px;
+    height: 140px;
+    border: 4px solid #dbe6ff;
+    margin-bottom: 18px;
+}
+
+/* Speaker name */
+.speaker-card h3{
+    font-size: 1.25rem !important;
+    font-weight: 700;
+    color: #1a237e;
+}
+
+/* Speaker text */
+.speaker-card .chief-guest-designation{
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+/* ===== FIX HERO PROFILE PHOTO ===== */
+
+.hero-image{
+    background: radial-gradient(circle at center, #ffffff 0%, #e3f2fd 70%);
+}
+
+.hero-image img{
+    object-fit: cover;
+    object-position: top center;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+    box-shadow:
+        0 0 0 10px rgba(255,255,255,0.9),
+        0 20px 40px rgba(0,0,0,0.25);
+}
+/* ===== REMOVE UGLY BACKGROUND BEHIND PHOTO ===== */
+
+.hero-image{
+    background: transparent !important;   /* kill that light blue box */
+}
+
+/* keep photo clean and floating */
+.hero-image img{
+    background: #ffffff;
+    padding: 10px;
+    box-shadow:
+        0 0 0 8px rgba(255,255,255,0.9),
+        0 20px 40px rgba(0,0,0,0.25);
+}
+@media (max-width: 768px){
+
+.featured-hero .hero-slide{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-image{
+    order: 1 !important;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.hero-content{
+    order: 2 !important;
+    width: 100%;
+    padding: 10px 20px 30px;
+}
+
+.hero-image img{
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
+    display: block;
+}
+
+.hero-arrow.left{
+    left: 10px;
+}
+.hero-arrow.right{
+    right: 10px;
+}
+}
+/* ===== ENLARGED CHIEF GUEST (MATCH SPEAKERS SCALE) ===== */
+
+.chief-guest-large{
+    max-width: 300px;
+    width: 100%;
+    border-radius: 20px;
+    padding-top: 20px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+}
+
+.chief-guest-large:hover{
+    transform: translateY(-8px);
+}
+
+/* Bigger photo like speakers */
+.chief-guest-large .chief-guest-img{
+    width: 130px;
+    height: 130px;
+    border: 4px solid #dbe6ff;
+    margin-bottom: 18px;
+}
+
+/* Name */
+.chief-guest-large h3{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a237e;
+}
+
+/* Designation */
+.chief-guest-large .chief-guest-designation{
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -158,6 +303,7 @@
                             <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
                             <li><a class="dropdown-item" href="advisory_committee.html">Advisory Committee</a></li>
                             <li><a class="dropdown-item" href="inst_organizing.html">Internal Organizing Committee</a></li>
+                            <li><a class="dropdown-item" href="student_org.html">Student’s Organizing Team</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="venue.html">Venue</a></li>
@@ -176,7 +322,7 @@
                 <h2 class="fw-bold text-center mb-3" style="color:#202861; font-size:2.1rem;">Chief Guest</h2>
                 <div class="row justify-content-center g-4">
                     <div class="col-12 col-md-4 d-flex justify-content-center">
-                        <div class="card shadow-sm border-0" style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card shadow-sm border-0 chief-guest-large">
                             <div class="card-body text-center">
                                 <img src="images/chiefguest.png" alt="Chief Guest" class="chief-guest-img">
                                 <div class="chief-guest-details">
@@ -192,6 +338,671 @@
         </div>
     </section>
     
+    <style>
+        /* ========== FEATURED HERO SLIDER ========== */
+        /* ========== FEATURED HERO SLIDER (FIXED) ========== */
+
+.featured-hero{
+    max-width: 900px;
+    margin: 40px auto 60px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    position: relative;
+}
+
+/* slider row */
+.featured-hero .hero-track{
+    display: flex;
+    transition: transform 0.8s ease;
+}
+
+/* each slide */
+.featured-hero .hero-slide{
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: transparent;   /* no double blue */
+    color: white;
+}
+
+/* left content */
+.hero-content{
+    padding: 60px;
+}
+.hero-content h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+.hero-content p{
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #e3f2fd;
+}
+
+/* right image */
+.hero-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;   /* REMOVE ugly blue box */
+}
+
+.hero-image img{
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow:
+        0 0 0 10px rgba(255,255,255,0.9),
+        0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* arrows */
+.hero-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:white;
+    border:none;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    color: var(--primary);
+}
+
+.hero-arrow.left{ left:15px;}
+.hero-arrow.right{ right:15px;}
+
+.hero-arrow:hover{
+    background: var(--accent);
+    color: white;
+}
+
+/* mobile */
+@media(max-width:768px){
+    .featured-hero .hero-slide{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-image{ order:1; padding-top:25px;}
+    .hero-content{ order:2; padding:20px;}
+    .hero-image img{
+        width:180px;
+        height:180px;
+    }
+}
+
+        </style>
+        
+        <div class="featured-hero">
+        
+            <div class="hero-track" id="heroTrack">
+
+                <!-- SPEAKER 2 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Chen Jinying</h2>
+                        <p>Executive Director, Centre for Indian Studies,<br>Shanghai International Studies University, China</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker15.png">
+                    </div>
+                </div>
+        
+        
+                <!-- SPEAKER 3 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Lindsay G. Oades</h2>
+                        <p>Provost, University of York Mumbai Campus</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker5.png">
+                    </div>
+                </div>
+        
+                <!-- SPEAKER 4 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Nirmala Mani Adhikari</h2>
+                        <p>HOD, Dept. of Language & Mass Communication,<br>Kathmandu University School of Arts, Nepal</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/advisory4.png">
+                    </div>
+                </div>
+        
+                <!-- SPEAKER 5 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Qu Yangyi</h2>
+                        <p>School of Marxism,<br>Chongqing University, China</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker6.png">
+                    </div>
+                </div>
+
+                <!-- <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Rachanee Dersingh</h2>
+                        <p>School of Liberal Arts,<br>King Mongkut’s University of Technology, Thonburi, Bangkok, Thailand
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker12.png">
+                    </div>
+                </div> -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Rahul Singh  </h2>
+                        <p>Director-Research and International Office,<br>IILM University, Gurugram
+
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker7.png">
+                    </div>
+                </div>
+
+                <!-- SPEAKER 1 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Bindu Arora</h2>
+                        <p>Professor, Department of Management Studies, Gurukul Kangri University <br>(Deemed to be University), India</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/bindu_arora.png">
+                    </div>
+                </div>
+
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. S. D. Roy                        </h2>
+                        <p>Former Head,Department of English, Centre for Theatre & Films,<br>University of Allahabad
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker9.png">
+                    </div>
+                </div>
+
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Mr. Roy Postigo                        </h2>
+                        <p>Trade Specialist,<br>PromPeru, Embassy of Peru
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker8.png">
+                    </div>
+                </div>
+
+                
+
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Dr. Sangeeta Mehta  </h2>
+                        <p>Buisness Head, South East Asia,<br>Cambridge University Press & Assessment</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker13.png">
+                    </div>
+                </div>
+
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. Thanis Tangkitjaroenkun  </h2>
+                        <p>Editor-in-Chief,<br>rEFLections Journal (Scopus Q2)                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/speakers/speaker11.png">
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <h2>Prof. V. Ganesan                        </h2>
+                        <p>Former Vice-Chancellor (VC),<br>CIEFL (now EFLU), Hyderabad                      </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/advisory7.png">
+                    </div>
+                </div>
+        
+        
+                
+                <!-- Add as many speakers as you want here -->
+        
+            </div>
+        
+            <button class="hero-arrow left" onclick="moveHero(-1)">❮</button>
+            <button class="hero-arrow right" onclick="moveHero(1)">❯</button>
+        </div>
+        
+        <script>
+        const heroTrack = document.getElementById("heroTrack");
+        const heroSlides = document.querySelectorAll(".hero-slide");
+        
+        let heroIndex = 0;
+        const totalSlides = heroSlides.length;
+        
+        function moveHero(dir = 1){
+            heroIndex = (heroIndex + dir + totalSlides) % totalSlides;
+            heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+        }
+        
+        /* auto play */
+        setInterval(() => {
+            moveHero(1);
+        }, 4500);
+        </script>
+        
+</script>
+
+    <!-- Speakers Section -->
+    <section style="background:#e8f3fe; padding:0.75rem 0 3rem;">
+        <div class="container" data-aos="fade-up">
+            
+
+            <h2 class="fw-bold text-center mb-3" style="color:#202861; font-size:2.1rem;">
+                Speakers
+            </h2>
+
+            <!-- 4 cards per row on large screens, 2 per row on small, 1 on extra-small -->
+            <div class="row justify-content-center g-4">
+
+                <!-- Speaker -->
+                
+
+                <!-- Speaker -->
+                 <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker15.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Chen Jinying">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Chen Jinying</h3>
+                                <div class="chief-guest-designation">
+                                    Executive Director,<br>
+                                    Centre for Indian Studies,<br>
+                                    Shanghai International Studies University, China
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/chen_jinying.jpg"
+                                 class="chief-guest-img"
+                                 alt="Prof. Chen Jinying">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Chen Jinying</h3>
+                                <div class="chief-guest-designation">
+                                    Executive Director,<br>
+                                    Centre for Indian Studies,<br>
+                                    Shanghai International Studies University
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Speaker -->
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/advisory3.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Chitrakalpa Sen">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Chitrakalpa Sen</h3>
+                                <div class="chief-guest-designation">
+                                    Head of Economics,<br>
+                                    University of Southampton,<br>
+                                    Delhi Campus
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Speaker -->
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/advisory133.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Janet Wilson">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Janet Wilson</h3>
+                                <div class="chief-guest-designation">
+                                    Emeritus Professor,<br>
+                                    University of Northampton;Visiting Professor, Birmingham City University
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker5.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Lindsay G. Oades">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Lindsay G. Oades</h3>
+                                <div class="chief-guest-designation">
+                                    Provost,<br>
+                                    University of York Mumbai Campus
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/advisory4.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Nirmala Mani Adhikari">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Nirmala Mani Adhikari</h3>
+                                <div class="chief-guest-designation">
+                                    HOD Dept. of Language and Mass Communication, Kathmandu University School of Arts
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/advisory7.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. V. Ganesan">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. V. Ganesan</h3>
+                                <div class="chief-guest-designation">
+                                    Former Vice-Chancellor (VC),<br>
+                                    CIEFL (now EFLU), Hyderabad
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker6.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Qu Yangyi">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Qu Yangyi</h3>
+                                <div class="chief-guest-designation">
+                                    School of Marxism,<br>
+                                    Chongqing University, China
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker -->
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0s"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker12.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Rachanee Dersingh">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Rachanee Dersingh</h3>
+                                <div class="chief-guest-designation">
+                                    School of Liberal Arts,<br>
+                                    King Mongkut’s University of Technology, Thonburi,<br>
+                                    Bangkok, Thailand
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center id="rahul">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker7.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Rahul Singh">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Rahul Singh</h3>
+                                <div class="chief-guest-designation">
+                                    Director-Research and International Office,<br>
+                                    IILM University, Gurugram
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/bindu_arora.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Bindu Arora">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Bindu Arora</h3>
+                                <div class="chief-guest-designation">
+                                    Professor, Department of Management Studies,<br>
+                                    Gurukul Kangri (Deemed to be University), Haridwar
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker9.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. S. D. Roy">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. S. D. Roy</h3>
+                                <div class="chief-guest-designation">
+                                    Former Head,<br>
+                                    Department of English, Centre for Theatre & Films,<br>
+                                    University of Allahabad
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker8.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Roy Postigo">
+
+                            <div class="chief-guest-details">
+                                <h3>Mr. Roy Postigo</h3>
+                                <div class="chief-guest-designation">
+                                    Trade Specialist,<br>
+                                    PromPeru, Embassy of Peru
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker13.png"
+                                 class="chief-guest-img"
+                                 alt="Dr. Sangeeta Mehta">
+
+                            <div class="chief-guest-details">
+                                <h3>Dr. Sangeeta Mehta</h3>
+                                <div class="chief-guest-designation">
+                                    Buisness Head, South East Asia,<br>
+                                    Cambridge University Press & Assessment.
+                        
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker -->
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker10.jpg"
+                                 class="chief-guest-img"
+                                 alt="Prof. Shravan Kumar">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Shravan Kumar</h3>
+                                <div class="chief-guest-designation">
+                                    Dean, School of Liberal Arts,<br>
+                                    K R Mangalam University, Sonipat, Haryana;<br>
+                                    Vice President, ELTAI
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Speaker -->
+                <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card speaker-card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/speakers/speaker11.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Thanis Tangkitjaroenkun">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Thanis Tangkitjaroenkun</h3>
+                                <div class="chief-guest-designation">
+                                    Editor-in-Chief,<br>
+                                    rEFLections Journal (Scopus Q2)
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Speaker -->
+                <!-- <div class="col-12 col-sm-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card shadow-sm border-0"
+                         style="border-radius:16px; width:100%; max-width:320px;">
+                        <div class="card-body text-center">
+
+                            <img src="images/advisory1.png"
+                                 class="chief-guest-img"
+                                 alt="Prof. Vinay Kumar Nangia">
+
+                            <div class="chief-guest-details">
+                                <h3>Prof. Vinay Kumar Nangia</h3>
+                                <div class="chief-guest-designation">
+                                    Retd. Professor and Head, Dept. Of Management Studies, IIT Roorkee, Professor Emeritus NSUT, BML Munjal University and GNDU
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+
             </div>
         </div>
     </section>
