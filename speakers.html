@@ -441,9 +441,15 @@
         height:180px;
     }
 }
+/* LIGHT BLUE BACKGROUND LIKE PAGE */
+
+.hero-bg{
+    background: #e8f3fe;
+    padding: 40px 0 60px;
+}
 
         </style>
-        
+    <section class="hero-bg">
         <div class="featured-hero">
         
             <div class="hero-track" id="heroTrack">
@@ -588,7 +594,8 @@
             <button class="hero-arrow left" onclick="moveHero(-1)">❮</button>
             <button class="hero-arrow right" onclick="moveHero(1)">❯</button>
         </div>
-        
+    </section>
+
         <script>
         const heroTrack = document.getElementById("heroTrack");
         const heroSlides = document.querySelectorAll(".hero-slide");
